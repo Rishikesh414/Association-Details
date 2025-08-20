@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+
+        .computer-node {
+            filter: drop-shadow(0 0 5px rgba(34, 128, 243, 0.7));
+        }
+
+        .glow {
+            box-shadow: 0 0 15px rgba(96, 165, 250, 0.5);
+        }
+
+        .network-line {
+            stroke-dasharray: 5;
+            animation: dash 20s linear infinite;
+        }
+
+        @keyframes dash {
+            to {
+                stroke-dashoffset: 1000;
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .logo-container {
+            background: linear-gradient(135deg, #1e40af 0%, #7e22ce 100%);
+            box-shadow: 0 0 25px rgba(99, 102, 241, 0.6);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-card {
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <section
+        class="relative bg-gradient-to-br from-gray-800 via-blue-900 to-purple-900 text-white rounded-2xl shadow-2xl p-8 md:p-12 overflow-hidden">
+
+        <!-- Background Effects -->
+        <div class="absolute inset-0 z-0 overflow-hidden">
+            <svg class="absolute w-full h-full opacity-30" xmlns="http://www.w3.org/2000/svg">
+                <line x1="0" y1="0" x2="100%" y2="100%" stroke="#6366F1" stroke-width="1" class="network-line" />
+                <line x1="100%" y1="0" x2="0" y2="100%" stroke="#6366F1" stroke-width="1" class="network-line" />
+                <line x1="50%" y1="0" x2="50%" y2="100%" stroke="#60A5FA" stroke-width="1" class="network-line" />
+                <line x1="0" y1="50%" x2="100%" y2="50%" stroke="#60A5FA" stroke-width="1" class="network-line" />
+            </svg>
+            <!-- Floating Nodes -->
+            <div class="absolute top-1/4 left-1/4 w-4 h-4 bg-blue-500 rounded-full opacity-70 animate-float"></div>
+            <div class="absolute top-1/3 right-1/4 w-3 h-3 bg-purple-500 rounded-full opacity-70 animate-float"
+                style="animation-delay:1s"></div>
+            <div class="absolute bottom-1/3 left-1/3 w-5 h-5 bg-indigo-500 rounded-full opacity-70 animate-float"
+                style="animation-delay:2s"></div>
+            <div class="absolute bottom-1/4 right-1/3 w-3 h-3 bg-blue-400 rounded-full opacity-70 animate-float"
+                style="animation-delay:1.5s"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 text-center">
+            <div
+                class="logo-container inline-flex items-center justify-center w-28 h-28 rounded-2xl mb-6 overflow-hidden">
+                <img src="./img/ne.png" alt="NEXUS Logo" class="logo-image animate-float" />
+            </div>
+            <h1
+                class="text-5xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-300">
+                NEXUS</h1>
+            <p class="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+                Connecting minds, fostering innovation, and building the future together
+            </p>
+
+            <!-- Navbar -->
+            <nav class="mt-10">
+                <ul class="flex justify-center space-x-8 text-sm md:text-base font-medium">
+                    <li><a href="Archeivements.html" class="hover:underline underline-offset-4 decoration-blue-400">Archeivements</a></li>
+                    <li><a href="#events" class="hover:underline underline-offset-4 decoration-blue-400">Events</a></li>
+                    <li><a href="#team" class="hover:underline underline-offset-4 decoration-blue-400">Team</a></li>
+                    <li><a href="#contact" class="hover:underline underline-offset-4 decoration-blue-400">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-16">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="bg-gray-800 backdrop-blur-lg rounded-2xl p-8 mb-12 border border-gray-700">
+                <h2 class="text-3xl font-bold mb-6 text-blue-200">Our Story</h2>
+                <p class="text-gray-300 mb-6 leading-relaxed">
+                    Founded in 2015, NEXUS Association emerged from a simple idea: that innovation thrives when diverse
+                    minds connect.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    What began as a small community of tech enthusiasts has grown into a global network of innovators
+                    across 50+ countries.
+                </p>
+            </div>
+            <!-- Vision & Mission -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div
+                    class="bg-gradient-to-br from-blue-900/70 to-blue-800/70 backdrop-blur-lg rounded-2xl p-8 border border-blue-600 shadow-lg">
+                    <div class="flex items-center mb-6 space-x-4">
+                        <div
+                            class="w-16 h-16 rounded-full bg-blue-800 flex items-center justify-center flex-shrink-0 shadow-md">
+                            <i class="fas fa-eye text-3xl text-blue-400"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Our Vision</h3>
+                    </div>
+                    <p class="text-gray-200 leading-relaxed">
+                        To create a world where innovation knows no boundaries and technology serves as a bridge to a
+                        more connected global community.
+                    </p>
+                </div>
+
+                <div
+                    class="bg-gradient-to-br from-purple-900/70 to-purple-800/70 backdrop-blur-lg rounded-2xl p-8 border border-purple-600 shadow-lg">
+                    <div class="flex items-center mb-6 space-x-4">
+                        <div
+                            class="w-16 h-16 rounded-full bg-purple-800 flex items-center justify-center flex-shrink-0 shadow-md">
+                            <i class="fas fa-bullseye text-3xl text-purple-400"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Our Mission</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-300 list-disc list-inside">
+                        <li><strong class="text-white">Bridging learning & leadership:</strong> Platforms for students
+                            to lead, explore, and collaborate.</li>
+                        <li><strong class="text-white">Fostering community:</strong> A supportive network for exchange
+                            of ideas and skills.</li>
+                        <li><strong class="text-white">Creating impact:</strong> Events that advance knowledge and
+                            nurture teamwork.</li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+        </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team -->
+    <section id="leadership-team" class="bg-gray-100 text-gray-800 py-12">
+        <h1 class="text-3xl font-bold text-center mt-6 mb-8">OFFICE-BEARERS <span id="year-title">2024</span></h1>
+        <div class="flex justify-center space-x-4 mb-10">
+            <button onclick="showYear('2022')" id="tab-2022" class="tab-btn">2022</button>
+            <button onclick="showYear('2023')" id="tab-2023" class="tab-btn">2023</button>
+            <button onclick="showYear('2024')" id="tab-2024" class="tab-btn-active">2024</button>
+        </div>
+        <div id="member-container" class="flex flex-wrap justify-center gap-8 px-6 pb-12"></div>
+    </section>
+
+    <!-- Events -->
+    <section id="events" class="bg-gray-100 py-8">
+        <div class="max-w-2xl mx-auto px-3 text-center">
+            <h2 class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                Upcoming Events</h2>
+            <p class="text-gray-600 mt-2">Stay connected and join us for insightful and inspiring events.</p>
+        </div>
+
+        <div class="grid gap-6 grid-cols-1 md:grid-cols-2 mt-10 max-w-4xl mx-auto">
+            <div
+                class="bg-white rounded-xl shadow-md hover:shadow-xl transform hover:scale-105 transition overflow-hidden group">
+                <div class="relative">
+                    <img src="./img/upcom.jpg" alt="Tech Summit"
+                        class="w-full h-36 object-cover group-hover:scale-105 transition" />
+                    <div
+                        class="absolute top-3 left-3 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                        Workshop</div>
+                    <div class="absolute top-3 right-3 bg-white text-gray-800 text-sm px-3 py-1 rounded-full">September
+                        27, 2025</div>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">NEXUS Tech Workshop </h3>
+                    <p class="text-gray-600 text-sm mb-3">Join industry leaders for keynotes, networking, and
+                        breakthrough insights.</p>
+                    <a href="#"
+                        class="inline-block bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-2 rounded-full text-sm font-medium">Register
+                        Now</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        const members = {
+            "2022": [
+                { name: "Thanush", position: "President", image: "./img/15 Rishikesh K (IT).jpg" },
+                { name: "Liam Patel", position: "Vice President", image: "./img/24 Thanushkumar P (IT).jpg" },
+                { name: "Sophia Lee", position: "Secretary", image: "./img/27 Yokesh Kumar R (IT).jpg" },
+                { name: "Noah Smith", position: "Joint Secretary", image: "./img/14 Pandiyarajan K (IT).jpg" }
+            ],
+            "2023": [{ name: "Thanush", position: "President", image: "./img/15 Rishikesh K (IT).jpg" },
+            { name: "Liam Patel", position: "Vice President", image: "./img/24 Thanushkumar P (IT).jpg" },
+            { name: "Sophia Lee", position: "Secretary", image: "./img/27 Yokesh Kumar R (IT).jpg" },
+            { name: "Noah Smith", position: "Joint Secretary", image: "./img/14 Pandiyarajan K (IT).jpg" }],
+            "2024": [{ name: "Thanush", position: "President", image: "./img/15 Rishikesh K (IT).jpg" },
+            { name: "Liam Patel", position: "Vice President", image: "./img/24 Thanushkumar P (IT).jpg" },
+            { name: "Sophia Lee", position: "Secretary", image: "./img/27 Yokesh Kumar R (IT).jpg" },
+            { name: "Noah Smith", position: "Joint Secretary", image: "./img/14 Pandiyarajan K (IT).jpg" }]
+        };
+
+        const positionColors = {
+            "President": "bg-blue-900 text-white",
+            "Vice President": "bg-yellow-400 text-black",
+            "Secretary": "bg-blue-500 text-white",
+            "Joint Secretary": "bg-gray-600 text-white"
+        };
+
+        function showYear(year) {
+            document.getElementById("year-title").textContent = year;
+
+            ["2022", "2023", "2024"].forEach(y => {
+                document.getElementById(`tab-${y}`).className = "tab-btn";
+            });
+            document.getElementById(`tab-${year}`).className = "tab-btn-active";
+
+            const container = document.getElementById("member-container");
+            container.innerHTML = "";
+            members[year].forEach(member => {
+                container.innerHTML += `
+        <div class="bg-white rounded-xl shadow-md w-72 p-4 hover:-translate-y-2 hover:shadow-xl transition">
+          <img src="${member.image}" alt="${member.name}" class="rounded-lg mb-4 w-full h-40 object-contain bg-gray-150"/>
+          <span class="inline-block ${positionColors[member.position]} text-xs px-3 py-1 rounded-full mb-2">${member.position}</span>
+          <h2 class="text-lg font-semibold">${member.name}</h2>
+          <p class="text-sm text-gray-600">Batch: ${year}</p>
+        </div>`;
+            });
+        }
+
+        // Default 2024
+        showYear("2024");
+    </script>
+
+    <style>
+        .tab-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            background: #e5e7eb;
+            color: #374151;
+            transition: .3s;
+        }
+
+        .tab-btn:hover {
+            background: #d1d5db;
+            transform: scale(1.05);
+        }
+
+        .tab-btn-active {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            background: #1e3a8a;
+            color: #fff;
+            font-weight: 600;
+        }
+    </style>
+
+</body>
+
+</html>
