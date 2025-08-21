@@ -17,7 +17,9 @@
             position: absolute;
             top: 0;
             left: 0;
-            z-index: 1;
+            z-index: 0;
+            opacity: 0.85;
+                /* pointer-events: none; removed to allow clicks */
         }
 
         .ui-panel {
@@ -295,10 +297,10 @@
         camera.position.set(0, 5, 22);
 
         const canvasElement = document.getElementById('neural-network-canvas'); // Get canvas element
-        const renderer = new THREE.WebGLRenderer({ canvas: canvasElement, antialias: true, powerPreference: "high-performance" });
+        const renderer = new THREE.WebGLRenderer({ canvas: canvasElement, antialias: true, powerPreference: "high-performance", alpha: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        renderer.setClearColor(0x000000);
+        renderer.setClearColor(0x000000, 0);
         renderer.outputColorSpace = THREE.SRGBColorSpace;
         
         function createStarfield() {
@@ -316,11 +318,11 @@
             const geo = new THREE.BufferGeometry();
             geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
             const mat = new THREE.PointsMaterial({
-                color: 0xffffff,
-                size: 0.15,
+                color: 0x8888aa, // dimmer color
+                size: 0.13,
                 sizeAttenuation: true,
                 depthWrite: false,
-                opacity: 0.8,
+                opacity: 0.03, // further dim starfield
                 transparent: true
             });
             return new THREE.Points(geo, mat);
@@ -1145,6 +1147,8 @@
                 depthWrite: false,
                 blending: THREE.AdditiveBlending
             });
+            // Dim all nodes by reducing their base color in the shader
+            nodesMaterial.uniforms.uBaseNodeSize.value = 0.38; // even smaller nodes
 
             nodesMesh = new THREE.Points(nodesGeometry, nodesMaterial);
             scene.add(nodesMesh);
@@ -1206,6 +1210,10 @@
                 depthWrite: false,
                 blending: THREE.AdditiveBlending
             });
+            // Dim connections by reducing their strength
+            connectionsMaterial.uniforms.uPulseSpeed.value = 13.0;
+            // Further dim connections by reducing their alpha in the shader
+            connectionsMaterial.opacity = 0.04;
 
             connectionsMesh = new THREE.LineSegments(connectionsGeometry, connectionsMaterial);
             scene.add(connectionsMesh);
@@ -1303,10 +1311,10 @@
                     connectionsMesh.material.uniforms.uPulsePositions.value[lastPulseIndex].copy(interactionPoint);
                     connectionsMesh.material.uniforms.uPulseTimes.value[lastPulseIndex] = time;
 
-                    const palette = colorPalettes[config.activePaletteIndex];
-                    const randomColor = palette[Math.floor(Math.random() * palette.length)];
-                    nodesMesh.material.uniforms.uPulseColors.value[lastPulseIndex].copy(randomColor);
-                    connectionsMesh.material.uniforms.uPulseColors.value[lastPulseIndex].copy(randomColor);
+                    // Set pulse color to purple
+                    const purple = new THREE.Color(0xA020F0); // hex for purple
+                    nodesMesh.material.uniforms.uPulseColors.value[lastPulseIndex].copy(purple);
+                    connectionsMesh.material.uniforms.uPulseColors.value[lastPulseIndex].copy(purple);
                 }
             }
         }
@@ -1352,6 +1360,12 @@
         function init() {
             createNetworkVisualization(config.currentFormation, config.densityFactor);
             updateTheme(config.activePaletteIndex);
+            // Trigger a pulse at the center of the screen on init
+            triggerPulse(window.innerWidth / 2, window.innerHeight / 2);
+            // Add event listener to trigger pulse on canvas click
+            canvasElement.addEventListener('click', function(e) {
+                triggerPulse(e.clientX, e.clientY);
+            });
             animate();
         }
 
