@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Association Nexus</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+
+  <!-- AOS Animate on Scroll -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+      color: #f1f5f9;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* 3D + Neon Hover Effect */
+    .card-3d {
+      transform-style: preserve-3d;
+      perspective: 1000px;
+      transition: transform 0.6s ease, box-shadow 0.3s ease;
+      background: rgba(255,255,255,0.05);
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .card-3d:hover {
+      transform: rotateY(12deg) rotateX(6deg) scale(1.05);
+      box-shadow: 0 0 25px rgba(0,255,255,0.8), 0 0 50px rgba(0,255,255,0.5);
+    }
+
+    /* Neon list hover */
+    .neon-list li {
+      transition: 0.3s;
+    }
+    .neon-list li:hover {
+      color: #00f5ff;
+      text-shadow: 0 0 10px #00f5ff;
+      transform: translateX(8px);
+    }
+
+    /* Image slider */
+    .slider-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1rem;
+    }
+    .slider-wrapper {
+      display: flex;
+      transition: transform 0.6s ease-in-out;
+    }
+    .slide {
+      min-width: 100%;
+      flex-shrink: 0;
+    }
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.4);
+      color: #fff;
+      padding: 0.5rem 0.8rem;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .slider-btn:hover {
+      background: rgba(0,0,0,0.7);
+    }
+    .slider-btn.left { left: 10px; }
+    .slider-btn.right { right: 10px; }
+  </style>
+</head>
+<body>
+
+ <!-- Hero Section -->
+<section class="h-screen flex flex-col justify-center items-center text-center px-6 relative">
+  <!-- Animated blobs background -->
+  <div class="absolute w-96 h-96 bg-indigo-500 opacity-30 blur-3xl rounded-full top-20 left-20 animate-pulse"></div>
+  <div class="absolute w-72 h-72 bg-purple-500 opacity-25 blur-2xl rounded-full bottom-20 right-20 animate-ping"></div>
+  <div class="absolute w-64 h-64 bg-pink-500 opacity-20 blur-3xl rounded-full top-1/3 left-1/3 animate-bounce"></div>
+
+  <div data-aos="zoom-in" class="card-3d text-center z-10 max-w-2xl">
+    <img src="./img/Nexus.png" alt="Association Logo" class="w-36 h-36 rounded-full shadow-md mx-auto mb-6" />
+    <!-- Reduced font size here -->
+    <h1 class="text-3xl md:text-4xl font-bold mb-4">
+      Network of eXperts in Unified System
+    </h1>
+    <p class="text-lg text-gray-300">
+      Nexus — a hub for innovation, collaboration, and learning excellence.
+    </p>
+  </div>
+
+  <a href="#about-association" class="mt-16 animate-bounce z-10">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </a>
+</section>
+
+
+  <!-- About Association -->
+  <section id="about-association" class="max-w-6xl mx-auto px-6 py-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div data-aos="fade-right">
+        <h2 class="text-4xl font-bold text-white mb-6">About the Association</h2>
+        <p class="text-lg text-gray-300 leading-relaxed mb-4">
+          Association Nexus is a dynamic initiative powered by the <strong class="text-orange-400">B.Tech Information Technology Department</strong>.  
+          Our mission is to empower students with collaborative learning, technical exploration, and leadership development.  
+        </p>
+        <p class="text-lg text-gray-300 leading-relaxed">
+          We aim to create an innovative environment where aspiring technologists connect, grow, and lead through real-world challenges and opportunities.
+        </p>
+      </div>
+
+      <!-- Slider -->
+      <div data-aos="fade-left">
+        <div class="slider-container shadow-xl card-3d">
+          <div class="slider-wrapper" id="slider">
+            <div class="slide"><img src="./img/1.jpeg" class="w-full h-72 object-cover" /></div>
+            <div class="slide"><img src="./img/2.jpeg" class="w-full h-72 object-cover" /></div>
+            <div class="slide"><img src="./img/3.jpeg" class="w-full h-72 object-cover" /></div>
+          </div>
+          <button class="slider-btn left" onclick="moveSlide(-1)">&#10094;</button>
+          <button class="slider-btn right" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision & Mission -->
+  <section id="vision-mission" class="max-w-6xl mx-auto px-6 py-20">
+    <div class="text-center mb-12" data-aos="fade-up">
+      <h2 class="text-4xl font-bold text-white mb-4">Vision & Mission</h2>
+      <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+        Our guiding principles that shape the future of innovation, leadership, and collaboration.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Vision -->
+      <div class="card-3d" data-aos="flip-left">
+        <div class="flex items-center gap-4 mb-6">
+          <i class="fas fa-eye text-4xl text-cyan-400"></i>
+          <h3 class="text-3xl font-semibold text-white">Our Vision</h3>
+        </div>
+        <ul class="space-y-3 text-lg neon-list">
+          <li><i class="fas fa-star text-cyan-400"></i> Empower learners with global knowledge.</li>
+          <li><i class="fas fa-lightbulb text-cyan-400"></i> Foster creativity and innovation.</li>
+          <li><i class="fas fa-users text-cyan-400"></i> Build a strong collaborative community.</li>
+          <li><i class="fas fa-globe text-cyan-400"></i> Make education accessible worldwide.</li>
+        </ul>
+      </div>
+
+      <!-- Mission -->
+      <div class="card-3d" data-aos="flip-right">
+        <div class="flex items-center gap-4 mb-6">
+          <i class="fas fa-bullseye text-4xl text-pink-400"></i>
+          <h3 class="text-3xl font-semibold text-white">Our Mission</h3>
+        </div>
+        <ul class="space-y-3 text-lg neon-list">
+          <li><i class="fas fa-book text-pink-400"></i> Deliver quality education through technology.</li>
+          <li><i class="fas fa-handshake text-pink-400"></i> Encourage partnerships with institutions.</li>
+          <li><i class="fas fa-brain text-pink-400"></i> Promote critical thinking & problem-solving.</li>
+          <li><i class="fas fa-rocket text-pink-400"></i> Inspire lifelong learning & global leadership.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+   <!-- Department of IT Section -->
+<section id="about-it" class="relative py-20 px-6 bg-gradient-to-r from-indigo-900 via-purple-900 to-black text-white">
+  <div class="max-w-6xl mx-auto space-y-12" data-aos="fade-up">
+
+    <!-- Top: Department Heading + Intro -->
+    <div class="bg-white/10 p-8 rounded-2xl shadow-lg hover:scale-105 transition duration-300 text-center">
+      <h2 class="text-3xl font-bold mb-6 text-orange-400">Department of Information Technology</h2>
+      <p class="text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
+        The Department of Information Technology is committed to excellence in teaching, learning, and research. 
+        It provides students with a strong foundation in computing technologies, programming, data science, and networking, 
+        while also fostering innovation and problem-solving skills to meet the demands of the IT industry.
+      </p>
+    </div>
+
+    <!-- Bottom: Two Side Containers -->
+    <div class="grid md:grid-cols-2 gap-12">
+      
+      <!-- Left: Aims -->
+      <div class="bg-white/10 p-8 rounded-2xl shadow-lg hover:scale-105 transition duration-300">
+        <h3 class="text-2xl font-semibold mb-4 text-orange-300">Our Aims</h3>
+        <ul class="space-y-3 text-gray-300 text-lg">
+          <li>✅ Understand the multidisciplinary domain of Information Science and align with industrial needs.</li>
+          <li>✅ Develop ethically responsible, adaptive, and skilled professionals for the IT sector.</li>
+          <li>✅ Contribute to the technical, scientific, and economic advancements through innovation and research.</li>
+        </ul>
+      </div>
+
+      <!-- Right: Highlights -->
+      <div class="bg-gradient-to-r from-orange-500 to-pink-500 p-8 rounded-2xl shadow-2xl hover:scale-105 transition duration-300">
+        <h3 class="text-2xl font-bold mb-4">Our Highlights</h3>
+        <ul class="space-y-4 text-lg">
+          <li>🏆 University Rank Holders in IT stream</li>
+          <li>🤝 MoUs with IT Industries & Startups</li>
+          <li>💡 Ongoing Research in AI, IoT & Cybersecurity</li>
+          <li>🌍 Strong Placement Record with Top IT Companies</li>
+          <li>📚 Well-equipped labs with modern infrastructure</li>
+          <li>🎓 Active student clubs & professional society chapters</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Stats below -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 text-center">
+      <div class="bg-white/10 p-8 rounded-2xl shadow-lg hover:scale-105 transition duration-300">
+        <h3 class="text-4xl font-bold text-orange-400">400+</h3>
+        <p class="mt-2 text-gray-300">Students Enrolled</p>
+      </div>
+      <div class="bg-white/10 p-8 rounded-2xl shadow-lg hover:scale-105 transition duration-300">
+        <h3 class="text-4xl font-bold text-green-400">25+</h3>
+        <p class="mt-2 text-gray-300">Faculty Members</p>
+      </div>
+      <div class="bg-white/10 p-8 rounded-2xl shadow-lg hover:scale-105 transition duration-300">
+        <h3 class="text-4xl font-bold text-blue-400">10+</h3>
+        <p class="mt-2 text-gray-300">Modern IT Labs</p>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration: 1200, once: true });</script>
+
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration: 1000, once: true });</script>
+
+  <!-- Slider Script -->
+  <script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+    const totalSlides = slides.length;
+    const sliderWrapper = document.getElementById("slider");
+
+    function moveSlide(step) {
+      currentIndex = (currentIndex + step + totalSlides) % totalSlides;
+      sliderWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    // Auto slide
+    setInterval(() => { moveSlide(1); }, 4000);
+  </script>
+
+</body>
+</html>
