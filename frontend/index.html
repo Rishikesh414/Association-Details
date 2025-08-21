@@ -61,6 +61,40 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
         }
+
+        .tab-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            background: #e5e7eb;
+            color: #374151;
+            transition: .3s;
+        }
+
+        .tab-btn:hover {
+            background: #d1d5db;
+            transform: scale(1.05);
+        }
+
+        .tab-btn-active {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            background: #1e3a8a;
+            color: #fff;
+            font-weight: 600;
+        }
+        /* Footer logo container & placeholder */
+    .logo-container {
+      background: linear-gradient(135deg, #1e40af 0%, #7e22ce 100%);
+      box-shadow: 0 0 12px rgba(99, 102, 241, 0.6);
+      border-radius: 6px;
+      color: white;
+      font-weight: 700;
+      font-size: 0.75rem; /* text-xs */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+    }
     </style>
 </head>
 
@@ -104,10 +138,12 @@
             <!-- Navbar -->
             <nav class="mt-10">
                 <ul class="flex justify-center space-x-8 text-sm md:text-base font-medium">
-                    <li><a href="./archeivement.html" class="hover:underline underline-offset-4 decoration-blue-400">Archeivements</a></li>
+                    <li><a href="#"
+                            class="hover:underline underline-offset-4 decoration-blue-400">Home</a></li>
                     <li><a href="#events" class="hover:underline underline-offset-4 decoration-blue-400">Events</a></li>
-                    <li><a href="#team" class="hover:underline underline-offset-4 decoration-blue-400">Gallery</a></li>
-                    <li><a href="#contact" class="hover:underline underline-offset-4 decoration-blue-400">Contact</a>
+                    <li><a href="./Gallery.html"
+                            class="hover:underline underline-offset-4 decoration-blue-400">Gallery</a></li>
+                    <li><a href="./Archeivement.html" class="hover:underline underline-offset-4 decoration-blue-400">Archeivements</a>
                     </li>
                 </ul>
             </nav>
@@ -182,6 +218,74 @@
         <div id="member-container" class="flex flex-wrap justify-center gap-8 px-6 pb-12"></div>
     </section>
 
+    <!-- 🎉 College Events Fancy Gallery Section -->
+    <section class="bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <h1 class="text-4xl font-extrabold text-center text-indigo-900 drop-shadow mb-10">
+                🌟 College Events Gallery 🌟
+            </h1>
+
+            <!-- Grid container -->
+            <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+                <!-- Annual Day -->
+                <div onclick="openGallery('annual')"
+                    class="cursor-pointer group bg-white rounded-2xl shadow-xl overflow-hidden transform hover:rotate-1 hover:scale-105 transition duration-500">
+                    <div class="relative">
+                        <img src="annual.jpg" alt="Annual Day"
+                            class="h-56 w-full object-cover group-hover:opacity-80 transition duration-300">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
+                            <span class="text-white text-3xl font-bold tracking-wide">View ➜</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h2 class="text-xl font-bold text-indigo-700 text-center">Annual Day '24</h2>
+                    </div>
+                </div>
+
+                <!-- Sports Day -->
+                <div onclick="openGallery('sports')"
+                    class="cursor-pointer group bg-white rounded-2xl shadow-xl overflow-hidden transform hover:-rotate-1 hover:scale-105 transition duration-500">
+                    <div class="relative">
+                        <img src="sports.jpg" alt="Sports Day"
+                            class="h-56 w-full object-cover group-hover:opacity-80 transition duration-300">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
+                            <span class="text-white text-3xl font-bold tracking-wide">View ➜</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h2 class="text-xl font-bold text-indigo-700 text-center">Sports Day</h2>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Fullscreen Modal Slider -->
+        <div id="galleryModal" class="fixed inset-0 bg-black bg-opacity-90 hidden items-center justify-center z-50">
+            <button onclick="closeGallery()"
+                class="absolute top-5 right-5 text-white text-3xl font-bold">&times;</button>
+
+            <!-- Slider -->
+            <div class="relative w-full max-w-4xl mx-auto">
+                <img id="galleryImage" src="" alt="Gallery" class="w-full h-[500px] object-contain rounded-xl fade-in">
+
+                <!-- Prev Button -->
+                <button onclick="prevImage()"
+                    class="absolute top-1/2 left-5 -translate-y-1/2 text-white bg-indigo-600 hover:bg-indigo-800 px-4 py-2 rounded-full text-2xl font-bold shadow-lg">
+                    &#10094;
+                </button>
+                <!-- Next Button -->
+                <button onclick="nextImage()"
+                    class="absolute top-1/2 right-5 -translate-y-1/2 text-white bg-indigo-600 hover:bg-indigo-800 px-4 py-2 rounded-full text-2xl font-bold shadow-lg">
+                    &#10095;
+                </button>
+            </div>
+        </div>
+    </section>
+
     <!-- Events -->
     <section id="events" class="bg-gray-100 py-8">
         <div class="max-w-2xl mx-auto px-3 text-center">
@@ -214,80 +318,118 @@
 
         </div>
     </section>
+  <!-- Footer -->
+  <footer class="bg-gray-900 border-t border-gray-800 py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <div class="flex items-center space-x-2 mb-4">
+            <div class="logo-container w-10 h-10">
+              <div class="logo-placeholder">N</div>
+            </div>
+            <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-300">NEXUS</span>
+          </div>
+          <p class="text-gray-400">
+            Connecting minds, fostering innovation, and building the future together.
+          </p>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">About</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Programs</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Events</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-4">Resources</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Research</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Partners</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-4">Connect With Us</h3>
+          <div class="flex space-x-4 mb-4">
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 transition">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-700 transition">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-purple-600 transition">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+          <p class="text-gray-400">contact@nexus.org</p>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+        <p>© 2023 NEXUS Association. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 
-    <script>
-        const members = {
-            "2022": [
-                { name: "Thanush", position: "President", image: "./img/15 Rishikesh K (IT).jpg" },
-                { name: "Liam Patel", position: "Vice President", image: "./img/24 Thanushkumar P (IT).jpg" },
-                { name: "Sophia Lee", position: "Secretary", image: "./img/27 Yokesh Kumar R (IT).jpg" },
-                { name: "Noah Smith", position: "Joint Secretary", image: "./img/14 Pandiyarajan K (IT).jpg" }
-            ],
-            "2023": [{ name: "Thanush", position: "President", image: "./img/15 Rishikesh K (IT).jpg" },
+
+</body>
+
+
+<script>
+    /* OFFICE-BEARERS*/
+    const members = {
+        "2022": [
+            { name: "Thanush", position: "President", image: "./img/15 Rishikesh K (IT).jpg" },
             { name: "Liam Patel", position: "Vice President", image: "./img/24 Thanushkumar P (IT).jpg" },
             { name: "Sophia Lee", position: "Secretary", image: "./img/27 Yokesh Kumar R (IT).jpg" },
-            { name: "Noah Smith", position: "Joint Secretary", image: "./img/14 Pandiyarajan K (IT).jpg" }],
-            "2024": [{ name: "Thanush", position: "President", image: "./img/15 Rishikesh K (IT).jpg" },
-            { name: "Liam Patel", position: "Vice President", image: "./img/24 Thanushkumar P (IT).jpg" },
-            { name: "Sophia Lee", position: "Secretary", image: "./img/27 Yokesh Kumar R (IT).jpg" },
-            { name: "Noah Smith", position: "Joint Secretary", image: "./img/14 Pandiyarajan K (IT).jpg" }]
-        };
+            { name: "Noah Smith", position: "Joint Secretary", image: "./img/14 Pandiyarajan K (IT).jpg" }
+        ],
+        "2023": [{ name: "Thanush", position: "President", image: "./img/15 Rishikesh K (IT).jpg" },
+        { name: "Liam Patel", position: "Vice President", image: "./img/24 Thanushkumar P (IT).jpg" },
+        { name: "Sophia Lee", position: "Secretary", image: "./img/27 Yokesh Kumar R (IT).jpg" },
+        { name: "Noah Smith", position: "Joint Secretary", image: "./img/14 Pandiyarajan K (IT).jpg" }],
+        "2024": [{ name: "Thanush", position: "President", image: "./img/15 Rishikesh K (IT).jpg" },
+        { name: "Liam Patel", position: "Vice President", image: "./img/24 Thanushkumar P (IT).jpg" },
+        { name: "Sophia Lee", position: "Secretary", image: "./img/27 Yokesh Kumar R (IT).jpg" },
+        { name: "Noah Smith", position: "Joint Secretary", image: "./img/14 Pandiyarajan K (IT).jpg" }]
+    };
 
-        const positionColors = {
-            "President": "bg-blue-900 text-white",
-            "Vice President": "bg-yellow-400 text-black",
-            "Secretary": "bg-blue-500 text-white",
-            "Joint Secretary": "bg-gray-600 text-white"
-        };
+    const positionColors = {
+        "President": "bg-blue-900 text-white",
+        "Vice President": "bg-yellow-400 text-black",
+        "Secretary": "bg-blue-500 text-white",
+        "Joint Secretary": "bg-gray-600 text-white"
+    };
 
-        function showYear(year) {
-            document.getElementById("year-title").textContent = year;
+    function showYear(year) {
+        document.getElementById("year-title").textContent = year;
 
-            ["2022", "2023", "2024"].forEach(y => {
-                document.getElementById(`tab-${y}`).className = "tab-btn";
-            });
-            document.getElementById(`tab-${year}`).className = "tab-btn-active";
+        ["2022", "2023", "2024"].forEach(y => {
+            document.getElementById(`tab-${y}`).className = "tab-btn";
+        });
+        document.getElementById(`tab-${year}`).className = "tab-btn-active";
 
-            const container = document.getElementById("member-container");
-            container.innerHTML = "";
-            members[year].forEach(member => {
-                container.innerHTML += `
+        const container = document.getElementById("member-container");
+        container.innerHTML = "";
+        members[year].forEach(member => {
+            container.innerHTML += `
         <div class="bg-white rounded-xl shadow-md w-72 p-4 hover:-translate-y-2 hover:shadow-xl transition">
           <img src="${member.image}" alt="${member.name}" class="rounded-lg mb-4 w-full h-40 object-contain bg-gray-150"/>
           <span class="inline-block ${positionColors[member.position]} text-xs px-3 py-1 rounded-full mb-2">${member.position}</span>
           <h2 class="text-lg font-semibold">${member.name}</h2>
           <p class="text-sm text-gray-600">Batch: ${year}</p>
         </div>`;
-            });
-        }
+        });
+    }
 
-        // Default 2024
-        showYear("2024");
-    </script>
-
-    <style>
-        .tab-btn {
-            padding: 0.5rem 1rem;
-            border-radius: 9999px;
-            background: #e5e7eb;
-            color: #374151;
-            transition: .3s;
-        }
-
-        .tab-btn:hover {
-            background: #d1d5db;
-            transform: scale(1.05);
-        }
-
-        .tab-btn-active {
-            padding: 0.5rem 1rem;
-            border-radius: 9999px;
-            background: #1e3a8a;
-            color: #fff;
-            font-weight: 600;
-        }
-    </style>
-
-</body>
+    // Default 2024
+    showYear("2024");
+</script>
 
 </html>
