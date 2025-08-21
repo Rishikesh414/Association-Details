@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <section
+        class="relative bg-gradient-to-br from-gray-800 via-blue-900 to-purple-900 text-white rounded-2xl shadow-2xl p-8 md:p-12 overflow-hidden">
+
+        <!-- Background Effects -->
+        <div class="absolute inset-0 z-0 overflow-hidden">
+            <svg class="absolute w-full h-full opacity-30" xmlns="http://www.w3.org/2000/svg">
+                <line x1="0" y1="0" x2="100%" y2="100%" stroke="#6366F1" stroke-width="1" class="network-line" />
+                <line x1="100%" y1="0" x2="0" y2="100%" stroke="#6366F1" stroke-width="1" class="network-line" />
+                <line x1="50%" y1="0" x2="50%" y2="100%" stroke="#60A5FA" stroke-width="1" class="network-line" />
+                <line x1="0" y1="50%" x2="100%" y2="50%" stroke="#60A5FA" stroke-width="1" class="network-line" />
+            </svg>
+            <!-- Floating Nodes -->
+            <div class="absolute top-1/4 left-1/4 w-4 h-4 bg-blue-500 rounded-full opacity-70 animate-float"></div>
+            <div class="absolute top-1/3 right-1/4 w-3 h-3 bg-purple-500 rounded-full opacity-70 animate-float"
+                style="animation-delay:1s"></div>
+            <div class="absolute bottom-1/3 left-1/3 w-5 h-5 bg-indigo-500 rounded-full opacity-70 animate-float"
+                style="animation-delay:2s"></div>
+            <div class="absolute bottom-1/4 right-1/3 w-3 h-3 bg-blue-400 rounded-full opacity-70 animate-float"
+                style="animation-delay:1.5s"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 text-center">
+            <div
+                class="logo-container inline-flex items-center justify-center w-28 h-28 rounded-2xl mb-6 overflow-hidden">
+                <img src="./img/ne.png" alt="NEXUS Logo" class="logo-image animate-float" />
+            </div>
+            <h1
+                class="text-5xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-300">
+                NEXUS</h1>
+            <p class="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+                Connecting minds, fostering innovation, and building the future together
+            </p>
+
+            <!-- Navbar -->
+            <nav class="mt-10">
+                <ul class="flex justify-center space-x-8 text-sm md:text-base font-medium">
+                    <li><a href="./index.html"
+                            class="hover:underline underline-offset-4 decoration-blue-400">Home</a></li>
+                    <li><a href="./Archeivement.html" class="hover:underline underline-offset-4 decoration-blue-400">Archeivements</a></li>
+                    <li><a href="#"
+                            class="hover:underline underline-offset-4 decoration-blue-400">Gallery</a></li>
+                    <li><a href="#contact" class="hover:underline underline-offset-4 decoration-blue-400">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+
+    <!-- 🎉 College Events Fancy Gallery Section -->
+    <section class="bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <h1 class="text-4xl font-extrabold text-center text-indigo-900 drop-shadow mb-10">
+                🌟 College Events Gallery 🌟
+            </h1>
+
+            <!-- Grid container -->
+            <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+                <!-- Annual Day -->
+                <div onclick="openGallery('annual')"
+                    class="cursor-pointer group bg-white rounded-2xl shadow-xl overflow-hidden transform hover:rotate-1 hover:scale-105 transition duration-500">
+                    <div class="relative">
+                        <img src="annual.jpg" alt="Annual Day"
+                            class="h-56 w-full object-cover group-hover:opacity-80 transition duration-300">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
+                            <span class="text-white text-3xl font-bold tracking-wide">View ➜</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h2 class="text-xl font-bold text-indigo-700 text-center">Annual Day '24</h2>
+                    </div>
+                </div>
+
+                <!-- Sports Day -->
+                <div onclick="openGallery('sports')"
+                    class="cursor-pointer group bg-white rounded-2xl shadow-xl overflow-hidden transform hover:-rotate-1 hover:scale-105 transition duration-500">
+                    <div class="relative">
+                        <img src="sports.jpg" alt="Sports Day"
+                            class="h-56 w-full object-cover group-hover:opacity-80 transition duration-300">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
+                            <span class="text-white text-3xl font-bold tracking-wide">View ➜</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h2 class="text-xl font-bold text-indigo-700 text-center">Sports Day</h2>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Fullscreen Modal Slider -->
+        <div id="galleryModal" class="fixed inset-0 bg-black bg-opacity-90 hidden items-center justify-center z-50">
+            <button onclick="closeGallery()"
+                class="absolute top-5 right-5 text-white text-3xl font-bold">&times;</button>
+
+            <!-- Slider -->
+            <div class="relative w-full max-w-4xl mx-auto">
+                <img id="galleryImage" src="" alt="Gallery" class="w-full h-[500px] object-contain rounded-xl fade-in">
+
+                <!-- Prev Button -->
+                <button onclick="prevImage()"
+                    class="absolute top-1/2 left-5 -translate-y-1/2 text-white bg-indigo-600 hover:bg-indigo-800 px-4 py-2 rounded-full text-2xl font-bold shadow-lg">
+                    &#10094;
+                </button>
+                <!-- Next Button -->
+                <button onclick="nextImage()"
+                    class="absolute top-1/2 right-5 -translate-y-1/2 text-white bg-indigo-600 hover:bg-indigo-800 px-4 py-2 rounded-full text-2xl font-bold shadow-lg">
+                    &#10095;
+                </button>
+            </div>
+        </div>
+    </section>
+  <!-- Footer -->
+  <footer class="bg-gray-900 border-t border-gray-800 py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <div class="flex items-center space-x-2 mb-4">
+            <div class="logo-container w-10 h-10">
+              <div class="logo-placeholder">N</div>
+            </div>
+            <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-300">NEXUS</span>
+          </div>
+          <p class="text-gray-400">
+            Connecting minds, fostering innovation, and building the future together.
+          </p>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">About</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Programs</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Events</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-4">Resources</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Research</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Partners</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-4">Connect With Us</h3>
+          <div class="flex space-x-4 mb-4">
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 transition">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-700 transition">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-purple-600 transition">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+          <p class="text-gray-400">contact@nexus.org</p>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+        <p>© 2023 NEXUS Association. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
