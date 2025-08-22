@@ -126,15 +126,18 @@
         ]
       ],
       [
-        "title" => "Workshop on Angular-js",
+        "title" => "Text Web Social Media Analytics",
         "images" => [
-          ""
+          "../frontend/img/text_social_media/51.jpeg",
+          "../frontend/img/text_social_media/52.jpeg",
+          "../frontend/img/text_social_media/53.jpeg"
         ]
       ],
       [
-        "title" => "Workshop on Angular-js",
+        "title" => "Sports",
         "images" => [
-          ""
+          "../frontend/img/sports/71.jpeg",
+          "../frontend/img/sports/72.jpg"
         ]
       ],
       [
