@@ -15,135 +15,124 @@
   <link />
 
   <style>
-    body {
-      background: linear-gradient(to right top, #1a1a2e, #1f1f41, #282855, #332f6a, #403680);
-    }
+  /* Apply the font to everything */
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right top, #1a1a2e, #1f1f41, #282855, #332f6a, #403680);
+    color: #ddd6fe;
+    margin: 0;
+    padding: 0;
+  }
 
-    .neon-list li::marker {
-      color: #c084fc;
-      text-shadow: 0 0 6px #a855f7;
-    }
+  .neon-list li::marker {
+    color: #c084fc;
+    text-shadow: 0 0 6px #a855f7;
+  }
 
-    /* Glassmorphism + 3D hover effect for containers */
-    .glass-card {
-      background: linear-gradient(135deg,
-          rgba(139, 92, 246, 0.15),
-          rgba(139, 92, 246, 0.05));
-      backdrop-filter: blur(15px);
-      border-radius: 24px;
-      box-shadow: 0 12px 30px rgba(139, 92, 246, 0.3);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-      will-change: transform;
-      cursor: default;
-      padding: 3rem 2.5rem;
-      border: 1px solid rgba(139, 92, 246, 0.3);
-      perspective: 1000px;
-      max-width: 900px;
-      width: 100%;
-    }
+  /* Base glassmorphism card */
+  .glass-card {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(139, 92, 246, 0.05));
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 24px;
+    box-shadow: 0 12px 30px rgba(139, 92, 246, 0.3);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    will-change: transform;
+    padding: 3rem 2.5rem;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    perspective: 1000px;
+    max-width: 900px;
+    width: 100%;
+    transform-style: preserve-3d;
+  }
 
-    .glass-card:hover {
-      transform: scale(1.05) rotateX(5deg) rotateY(10deg);
-      box-shadow: 0 25px 50px rgba(139, 92, 246, 0.6);
-      cursor: pointer;
-    }
+  /* Pull-up + 3D hover animation */
+  .glass-card:hover {
+    transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+    box-shadow: 0 25px 50px rgba(139, 92, 246, 0.6);
+    cursor: pointer;
+  }
 
-    /* Different colors for each container */
-    .glass-objectives {
-      background: linear-gradient(135deg,
-          rgba(123, 97, 255, 0.2),
-          rgba(72, 47, 168, 0.1));
-      border-color: rgba(123, 97, 255, 0.4);
-      box-shadow: 0 12px 30px rgba(123, 97, 255, 0.4);
-    }
+  /* Custom color cards */
+  .glass-objectives {
+    background: linear-gradient(135deg, rgba(123, 97, 255, 0.2), rgba(72, 47, 168, 0.1));
+    border-color: rgba(123, 97, 255, 0.4);
+    box-shadow: 0 12px 30px rgba(123, 97, 255, 0.4);
+  }
 
-    .glass-activities {
-      background: linear-gradient(135deg,
-          rgba(249, 115, 22, 0.2),
-          rgba(194, 65, 12, 0.1));
-      border-color: rgba(249, 115, 22, 0.4);
-      box-shadow: 0 12px 30px rgba(249, 115, 22, 0.4);
-    }
+  .glass-activities {
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(194, 65, 12, 0.1));
+    border-color: rgba(249, 115, 22, 0.4);
+    box-shadow: 0 12px 30px rgba(249, 115, 22, 0.4);
+  }
 
-    .glass-community {
-      background: linear-gradient(135deg,
-          rgba(16, 185, 129, 0.2),
-          rgba(5, 150, 105, 0.1));
-      border-color: rgba(16, 185, 129, 0.4);
-      box-shadow: 0 12px 30px rgba(16, 185, 129, 0.4);
-    }
+  .glass-community {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(5, 150, 105, 0.1));
+    border-color: rgba(16, 185, 129, 0.4);
+    box-shadow: 0 12px 30px rgba(16, 185, 129, 0.4);
+  }
 
-    .glass-why {
-      background: linear-gradient(135deg,
-          rgba(59, 130, 246, 0.2),
-          rgba(29, 78, 216, 0.1));
-      border-color: rgba(59, 130, 246, 0.4);
-      box-shadow: 0 12px 30px rgba(59, 130, 246, 0.4);
-    }
+  .glass-why {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(29, 78, 216, 0.1));
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 12px 30px rgba(59, 130, 246, 0.4);
+  }
 
-    /* Section titles */
-    .section-title {
-      font-weight: 800;
-      font-size: 2.5rem;
-      color: #8b5cf6;
-      /* Tailwind purple-400 */
-      margin-bottom: 1.5rem;
-      text-shadow: 0 0 10px rgba(139, 92, 246, 0.7);
-    }
+  /* Section title styling */
+  .section-title {
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: #8b5cf6;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.7);
+  }
 
-    /* Text */
-    .section-text {
-      color: #ddd6fe;
-      /* Tailwind purple-100 */
-      font-size: 1.125rem;
-      line-height: 1.7;
-    }
+  .section-text {
+    color: #ddd6fe;
+    font-size: 1.125rem;
+    line-height: 1.7;
+  }
 
-    /* Lists */
-    .section-list {
-      list-style-type: disc;
-      padding-left: 1.25rem;
-      color: #ddd6fe;
-    }
+  .section-list {
+    list-style-type: disc;
+    padding-left: 1.25rem;
+    color: #ddd6fe;
+  }
 
-    .section-list li {
-      margin-bottom: 0.75rem;
-    }
+  .section-list li {
+    margin-bottom: 0.75rem;
+  }
 
-    /* Highlighted spans */
-    .highlighted {
-      font-weight: 600;
-      color: white;
-    }
+  .highlighted {
+    font-weight: 600;
+    color: white;
+  }
 
+  .zigzag-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 4rem;
+    gap: 3rem;
+    flex-wrap: wrap;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
+  @media (max-width: 768px) {
     .zigzag-section {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 5rem 4rem;
-      /* increased horizontal padding */
-      gap: 3rem;
-      flex-wrap: wrap;
-      max-width: 1280px;
-      /* wider max width */
-      margin-left: auto;
-      margin-right: auto;
+      flex-direction: column !important;
+      padding: 3rem 2rem;
     }
 
-    @media (max-width: 768px) {
-      .zigzag-section {
-        flex-direction: column !important;
-        padding: 3rem 2rem;
-        /* also increased on small screens */
-      }
-
-      .zigzag-left,
-      .zigzag-right {
-        justify-content: center !important;
-      }
+    .zigzag-left,
+    .zigzag-right {
+      justify-content: center !important;
     }
-  </style>
+  }
+</style>
+
 </head>
 
 <body class="bg-gray-900 relative overflow-auto text-gray-200">
@@ -194,7 +183,7 @@
             <h3 class="text-2xl font-semibold text-white">Our Vision</h3>
           </div>
           <p class="text-lg text-purple-100 leading-relaxed">
-            To create a vibrant community of IT students who are passionate about technology, innovation, and continuous learning.
+            To bring out streamlined technocrats for building sustenance civilization.
           </p>
         </div>
 
@@ -205,98 +194,78 @@
             <h3 class="text-2xl font-semibold text-white">Our Mission</h3>
           </div>
           <ul class="list-disc list-inside text-purple-100 space-y-2 text-lg neon-list">
-            <li>Bridging learning and leadership: Providing platforms for students to lead, explore, and
-collaborate.</li>
-            <li>Fostering community: Building a supportive network for the exchange of ideas and skills.</li>
-            <li>Creating impact: Organizing events that advance technical knowledge while nurturing
-teamwork and innovation..</li>
-            <li>Organize workshops, hackathons, seminars, and community projects that provide practical experience.</li>
-            <li>Empower students to achieve personal and professional growth while contributing to the IT community.</li>
-          </ul>
+            <li>To inculcate technologies that decodes the solution for real world exigency.</li>
+            <li>To encourage and develop generous and ethical contributions to cater the industrial demands.</li>
+            <li>To impart and ignite the research skills along with soft skills to shine in the era of automation.</li>
+</ul>
         </div>
       </div>
     </section>
 
 
-    <!-- Our Objectives -->
-    <section
-      class="zigzag-section zigzag-left"
-      data-aos="fade-right"
-      data-aos-duration="800">
-      <div class="glass-card glass-objectives">
-        <h2 class="section-title">Our Objectives</h2>
-        <ul class="section-list">
-          <li><span class="highlighted">Skill Development:</span> Provide training in coding, AI, cybersecurity, data science, and emerging IT fields.</li>
-          <li><span class="highlighted">Innovation & Creativity:</span> Encourage students to develop innovative projects and solutions.</li>
-          <li><span class="highlighted">Collaboration & Networking:</span> Build a strong community of students who can collaborate, mentor, and inspire each other.</li>
-          <li><span class="highlighted">Exposure to Industry:</span> Connect students with experts, alumni, and professionals through workshops and events.</li>
-          <li><span class="highlighted">Community Engagement:</span> Initiate projects that have a positive impact on society, technology, and the student community.</li>
-        </ul>
-      </div>
-    </section>
+  <!-- Our Objectives -->
+  <section class="py-10 px-4 zigzag-section zigzag-left" data-aos="fade-right" data-aos-duration="800">
+    <div class="glass-card transition-transform duration-300 hover:-translate-y-2">
+      <h2 class="section-title">Our Objectives</h2>
+      <ul class="section-list">
+        <li><span class="highlighted">Skill Development:</span> Provide training in coding, AI, cybersecurity, data science, and emerging IT fields.</li>
+        <li><span class="highlighted">Innovation & Creativity:</span> Encourage students to develop innovative projects and solutions.</li>
+        <li><span class="highlighted">Collaboration & Networking:</span> Build a strong community of students who can collaborate, mentor, and inspire each other.</li>
+        <li><span class="highlighted">Exposure to Industry:</span> Connect students with experts, alumni, and professionals through workshops and events.</li>
+        <li><span class="highlighted">Community Engagement:</span> Initiate projects that have a positive impact on society, technology, and the student community.</li>
+      </ul>
+    </div>
+  </section>
 
-    <!-- Activities & Programs -->
-    <section
-      class="zigzag-section zigzag-right"
-      data-aos="fade-left"
-      data-aos-duration="1000">
-      <div class="glass-card glass-activities">
-        <h2 class="section-title">Activities & Programs</h2>
-        <ul class="section-list">
-          <li><span class="highlighted">Workshops & Seminars:</span> Hands-on sessions led by industry professionals and alumni.</li>
-          <li><span class="highlighted">Hackathons & Competitions:</span> Platforms for students to solve real-world challenges.</li>
-          <li><span class="highlighted">Tech Talks & Meetups:</span> Knowledge-sharing sessions on emerging trends and technologies.</li>
-          <li><span class="highlighted">Skill Development Programs:</span> Practical training sessions in coding, AI, cybersecurity, and project management.</li>
-          <li><span class="highlighted">Community Projects:</span> Student-led initiatives to apply knowledge in real-world scenarios.</li>
-        </ul>
-      </div>
-    </section>
+  <!-- Activities & Programs -->
+  <section class="py-10 px-4 zigzag-section zigzag-right" data-aos="fade-left" data-aos-duration="1000">
+    <div class="glass-card transition-transform duration-300 hover:-translate-y-2">
+      <h2 class="section-title">Activities & Programs</h2>
+      <ul class="section-list">
+        <li><span class="highlighted">Workshops & Seminars:</span> Hands-on sessions led by industry professionals and alumni.</li>
+        <li><span class="highlighted">Hackathons & Competitions:</span> Platforms for students to solve real-world challenges.</li>
+        <li><span class="highlighted">Tech Talks & Meetups:</span> Knowledge-sharing sessions on emerging trends and technologies.</li>
+        <li><span class="highlighted">Skill Development Programs:</span> Practical training sessions in coding, AI, cybersecurity, and project management.</li>
+        <li><span class="highlighted">Community Projects:</span> Student-led initiatives to apply knowledge in real-world scenarios.</li>
+      </ul>
+    </div>
+  </section>
 
-    <!-- Our Community -->
-    <section
-      class="zigzag-section zigzag-left"
-      data-aos="fade-right"
-      data-aos-duration="1200">
-      <div class="glass-card glass-community">
-        <h2 class="section-title">Our Community</h2>
-        <p class="section-text mb-4">
-          NEXUS is entirely student-driven, ensuring that every initiative and event reflects the interests and creativity of its members.
-          The association welcomes all IT students, from beginners to advanced learners, and provides an environment where every member can learn, lead, and contribute.
-        </p>
-        <p class="section-text">
-          We believe in peer learning, mentorship, and collaboration – the core pillars that make NEXUS a thriving student association.
-        </p>
-      </div>
-    </section>
+  <!-- Our Community -->
+  <section class="py-10 px-4 zigzag-section zigzag-left" data-aos="fade-right" data-aos-duration="1200">
+    <div class="glass-card transition-transform duration-300 hover:-translate-y-2">
+      <h2 class="section-title">Our Community</h2>
+      <p class="section-text mb-4">
+        NEXUS is entirely student-driven, ensuring that every initiative and event reflects the interests and creativity of its members.
+        The association welcomes all IT students, from beginners to advanced learners, and provides an environment where every member can learn, lead, and contribute.
+      </p>
+      <p class="section-text">
+        We believe in peer learning, mentorship, and collaboration – the core pillars that make NEXUS a thriving student association.
+      </p>
+    </div>
+  </section>
 
-    <!-- Why NEXUS -->
-    <section
-      class="zigzag-section zigzag-right"
-      data-aos="fade-left"
-      data-aos-duration="1400">
-      <div class="glass-card glass-why">
-        <h2 class="section-title">Why NEXUS?</h2>
-        <ul class="section-list">
-          <li>Learning beyond the classroom through real-world applications.</li>
-          <li>Networking with fellow students, alumni, and industry experts.</li>
-          <li>Building leadership and teamwork skills.</li>
-          <li>Opportunities for innovation and recognition.</li>
-          <li>A supportive student community that motivates and inspires.</li>
-        </ul>
-        <p class="section-text mt-4">
-          At NEXUS, we don’t just create events – we create experiences that empower students for life.
-        </p>
-      </div>
-    </section>
-
-
-  </div>
+  <!-- Why NEXUS -->
+  <section class="py-10 px-4 zigzag-section zigzag-right" data-aos="fade-left" data-aos-duration="1400">
+    <div class="glass-card transition-transform duration-300 hover:-translate-y-2">
+      <h2 class="section-title">Why NEXUS?</h2>
+      <ul class="section-list">
+        <li>Learning beyond the classroom through real-world applications.</li>
+        <li>Networking with fellow students, alumni, and industry experts.</li>
+        <li>Building leadership and teamwork skills.</li>
+        <li>Opportunities for innovation and recognition.</li>
+        <li>A supportive student community that motivates and inspires.</li>
+      </ul>
+      <p class="section-text mt-4">
+        At NEXUS, we don’t just create events – we create experiences that empower students for life.
+      </p>
+    </div>
+  </section>
 
   <!-- AOS JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({
-
       easing: 'ease-out-cubic',
       offset: 120,
     });

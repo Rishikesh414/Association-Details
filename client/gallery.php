@@ -140,12 +140,7 @@
           "../frontend/img/sports/72.jpg"
         ]
       ],
-      [
-        "title" => "Workshop on Angular-js",
-        "images" => [
-         ""
-        ]
-      ]
+     
     ];
 
     foreach($gallery as $index => $item) {
