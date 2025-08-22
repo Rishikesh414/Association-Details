@@ -73,7 +73,7 @@
     // Fetch students from backend
     async function fetchStudents() {
       try {
-        const response = await fetch("http://localhost/Association-Details/admin/get_students.php"); 
+        const response = await fetch("../admin/get_students.php"); 
         studentsData = await response.json();
         showYear("4th Year"); // Default tab
       } catch (error) {
@@ -118,8 +118,9 @@
 
         // Correct photo path
         const photoSrc = student.photo 
-          ? `http://localhost/Association-Details/admin/achievements/${student.photo}`
-          : 'http://localhost/Association-Details/admin/uploads/students/default.png';
+         
+          ? `../admin/achievements/${student.photo}`
+          : '../admin/uploads/students/default.png';
 
         card.innerHTML = `
           <img src="${photoSrc}" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover">
@@ -128,7 +129,7 @@
         `;
 
         card.onclick = () => {
-          window.location.href = "http://localhost/Association-Details/client/student.php?id=" + student.student_id;
+          window.location.href = "./student.php?id=" + student.student_id;
         };
 
         container.appendChild(card);
