@@ -1,8 +1,13 @@
 <?php
+// $host = "localhost";
+// $user = "root";
+// $pass = "";
+// $dbname = "association_db"; 
+
 $host = "localhost";
-$user = "root";
-$pass = "";
-$dbname = "association_db"; // fixed space issue, use underscore instead of space
+$user = "nscet_association";
+$pass = "nscet@9210";
+$dbname = "nscet_association"; 
 
 $conn = new mysqli($host, $user, $pass, $dbname);
 

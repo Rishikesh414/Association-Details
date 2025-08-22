@@ -31,8 +31,9 @@
 
       <!-- Title -->
       <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-xl">
-        NEXUS – <span class="text-purple-400">Connecting Ideas</span>, 
-        <br class="hidden md:block"> Igniting Innovation
+      
+        <span class="text-purple-400">Network of eXperts in Unified System</span>
+        <br class="hidden md:block">
       </h1>
 
       <!-- Subtitle -->
