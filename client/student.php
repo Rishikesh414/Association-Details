@@ -74,9 +74,13 @@ $student_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
     const studentRes = await fetch("http://localhost/Association-Details/admin/get_students.php?id=" + id);
     const student = await studentRes.json();
 
+    // Image container adjusts to actual image size
     document.getElementById("student-info").innerHTML = `
-      <img src="${student.photo || './img/default.png'}" 
-           class="w-32 h-32 rounded-full mx-auto mb-4 ring-4 ring-blue-500 shadow-lg">
+      <div class="mx-auto mb-4  overflow-hidden shadow-lg" style="display: inline-block;">
+        <img src="${student.photo ? 'http://localhost/Association-Details/admin/achievements/' + student.photo : './img/default.png'}"
+             class="block object-cover"
+             style="max-width: 100%; height: auto;">
+      </div>
       <h1 class="text-3xl font-bold text-white">${student.name}</h1>
       <p class="text-gray-400 mt-1">${student.department} - Year ${student.year}</p>
       <p class="text-gray-400 mt-1">${student.reg_no || ""} | ${student.email || ""}</p>

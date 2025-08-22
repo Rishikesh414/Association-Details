@@ -54,7 +54,7 @@
   <!-- Center Logo (half inside/outside navbar) -->
   <div class="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2">
     <div class="w-24 h-24 rounded-full bg-purple-500 shadow-lg flex items-center justify-center ring-4 ring-purple-500/40 transition hover:scale-110 hover:ring-purple-400">
-      <img src="assets/img/ne.png" alt="Logo" class="w-22 h-22 object-contain rounded-full">
+      <img src="http://localhost/Association-Details/client/assets/img/ne.png" alt="Logo" class="w-22 h-22 object-contain rounded-full">
     </div>
   </div>
 

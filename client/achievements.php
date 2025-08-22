@@ -96,7 +96,7 @@
       const container = document.getElementById("member-container");
       container.innerHTML = "";
 
-      // ✅ Filter students by year
+      // Filter students by year
       const filtered = studentsData.filter(s => {
         let yr = "";
         switch (s.year) {
@@ -117,13 +117,17 @@
         const card = document.createElement("div");
         card.className = "bg-white rounded-xl shadow-md p-6 text-center cursor-pointer hover:shadow-2xl hover:-translate-y-2 transform transition duration-500 ease-in-out";
 
+        // Correct photo path
+        const photoSrc = student.photo 
+          ? `http://localhost/Association-Details/admin/achievements/${student.photo}`
+          : 'http://localhost/Association-Details/admin/uploads/students/default.png';
+
         card.innerHTML = `
-          <img src="${student.photo || './img/default.png'}" class="w-24 h-24 rounded-full mx-auto mb-3">
+          <img src="${photoSrc}" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover">
           <h2 class="text-lg font-semibold text-gray-900">${student.name}</h2>
           <p class="text-sm text-gray-600">${student.department} - ${student.year} Year</p>
         `;
 
-        // ✅ On click -> go to student profile page
         card.onclick = () => {
           window.location.href = "http://localhost/Association-Details/client/student.php?id=" + student.student_id;
         };
