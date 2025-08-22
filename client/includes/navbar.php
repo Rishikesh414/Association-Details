@@ -2,10 +2,10 @@
 <nav class="bg-gradient-to-r from-black via-purple-900 to-black backdrop-blur-md shadow-lg fixed top-0 w-full z-50">
   <div class="max-w-7xl mx-auto px-6">
     <div class="flex justify-between items-center h-16">
-      
-      <!-- Left: Association Name -->
+
+      <!-- Left: Glowing NEXUS Title -->
       <div class="flex-shrink-0">
-        <a href="index.php" class="text-2xl font-extrabold text-purple-400 tracking-wide drop-shadow-md">
+        <a href="index.php" class="text-3xl font-extrabold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-500 to-purple-400 animate-pulse glow-text">
           NEXUS
         </a>
       </div>
@@ -36,7 +36,6 @@
           Office Bearers
           <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-purple-500 transition-all group-hover:w-full"></span>
         </a>
-
       </div>
 
       <!-- Mobile Menu Button -->
@@ -44,14 +43,14 @@
         <button id="menu-btn" class="focus:outline-none">
           <svg class="w-7 h-7 text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"/>
+              d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
       </div>
     </div>
   </div>
 
-  <!-- Center Logo (half inside/outside navbar) -->
+  <!-- Center Logo (Half inside/outside navbar) -->
   <div class="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2">
     <div class="w-24 h-24 rounded-full bg-purple-500 shadow-lg flex items-center justify-center ring-4 ring-purple-500/40 transition hover:scale-110 hover:ring-purple-400">
       <img src="http://localhost/Association-Details/client/assets/img/ne.png" alt="Logo" class="w-22 h-22 object-contain rounded-full">
@@ -70,6 +69,7 @@
   </div>
 </nav>
 
+<!-- Toggle Script -->
 <script>
   const menuBtn = document.getElementById('menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
@@ -77,3 +77,15 @@
     mobileMenu.classList.toggle('hidden');
   });
 </script>
+
+<!-- Custom Glow Style -->
+<style>
+  .glow-text {
+    text-shadow:
+      0 0 5px #a855f7,
+      0 0 10px #a855f7,
+      0 0 20px #9333ea,
+      0 0 40px #9333ea,
+      0 0 80px #6b21a8;
+  }
+</style>
