@@ -33,12 +33,10 @@
           <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-purple-500 transition-all group-hover:w-full"></span>
         </a>
         <a href="contact.php" class="relative group">
-          Contact
+          Office Bearers
           <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-purple-500 transition-all group-hover:w-full"></span>
         </a>
-        <a href="login.php" class="text-purple-400 font-semibold hover:text-purple-300 transition">
-          Login
-        </a>
+
       </div>
 
       <!-- Mobile Menu Button -->
