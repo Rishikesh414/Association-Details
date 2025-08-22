@@ -113,9 +113,9 @@
 
         <!-- Year Buttons -->
         <div class="flex justify-center gap-4 mb-12">
-          <button class="year-btn px-5 py-2 rounded-full text-purple-300 border border-purple-500 hover:bg-purple-700 hover:text-white transition" data-year="2023" aria-pressed="true">2022 - 2023</button>
-          <button class="year-btn px-5 py-2 rounded-full text-purple-300 border border-purple-500 hover:bg-purple-700 hover:text-white transition" data-year="2024" aria-pressed="false">2023 - 2024</button>
-          <button class="year-btn px-5 py-2 rounded-full text-purple-300 border border-purple-500 hover:bg-purple-700 hover:text-white transition" data-year="2025" aria-pressed="false">2024 - 2025</button>
+          <button class="year-btn px-5 py-2 rounded-full text-purple-300 border border-purple-500 hover:bg-purple-700 hover:text-white transition" data-year="2023" aria-pressed="true">2023 - 2024</button>
+          <button class="year-btn px-5 py-2 rounded-full text-purple-300 border border-purple-500 hover:bg-purple-700 hover:text-white transition" data-year="2024" aria-pressed="false">2024 - 2025</button>
+          <button class="year-btn px-5 py-2 rounded-full text-purple-300 border border-purple-500 hover:bg-purple-700 hover:text-white transition" data-year="2025" aria-pressed="false">2025 - 2026</button>
         </div>
 
         <!-- Cards Grid -->

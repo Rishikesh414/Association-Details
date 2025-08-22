@@ -30,7 +30,6 @@
     <!-- Hero Section -->
     <section class="text-center py-16 px-6">
       <div class="inline-flex items-center justify-center w-28 h-28 mb-6 mx-auto">
-        <img src="./img/ne.png" alt="NEXUS Logo" class="rounded-2xl animate-float" />
       </div>
       <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-300">
         NEXUS
