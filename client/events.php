@@ -1,4 +1,3 @@
- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +12,61 @@
       50% { transform: translateY(-15px); }
     }
     .animate-float { animation: float 4s ease-in-out infinite; }
+
+    /* Flip card styles */
+    .flip-card {
+      perspective: 1000px;
+      width: 100%;
+      height: 250px;
+    }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 1rem;
+      overflow: hidden;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+    .flip-card-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .flip-card-back {
+      background: linear-gradient(135deg, rgba(10,10,30,0.95), rgba(20,0,50,0.95));
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 1rem;
+      border: 1px solid rgba(0,255,255,0.3);
+      box-shadow: 0 0 20px rgba(0,255,255,0.2);
+    }
+    .flip-card-back h3 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: cyan;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 8px purple, 0 0 15px cyan;
+    }
+    .flip-card-back p {
+      font-size: 0.95rem;
+      color: #eee;
+      margin: 0.2rem 0;
+    }
   </style>
 </head>
 <body class="bg-gray-900 text-white relative">
@@ -39,90 +93,46 @@
       <p class="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed text-gray-200">
         Connecting minds, fostering innovation, and building the future together
       </p>
-
-    
-        
     </section>
 
-    <!-- Student List -->
-    <section id="student-section" class="py-12 max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-8">Upcoming Events </h2>
-      <div id="member-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-    </section>
+    <!-- Gallery Section with Flip Cards -->
+    <section class="max-w-6xl mx-auto px-6 py-12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <?php
+        $gallery = [
+          ["title" => "2023 Inauguration", "guest" => "Dr. A", "date" => "12 Jan 2023", "image" => "../frontend/img/IMG_8697.JPG"],
+          ["title" => "2024 Inauguration", "guest" => "Prof. B", "date" => "15 Jan 2024", "image" => "../frontend/img/img.jpg"],
+          ["title" => "Workshop on Django", "guest" => "Dr. XYZ", "date" => "25 Aug 2025", "image" => "../frontend/img/gallery5.jpg"],
+          ["title" => "Tech Fest", "guest" => "Mr. Techie", "date" => "10 Sep 2025", "image" => "../frontend/img/gallery7.jpg"],
+          ["title" => "Tech Fest", "guest" => "Mr. Techie", "date" => "10 Sep 2025", "image" => "../frontend/img/gallery7.jpg"],
+          ["title" => "Tech Fest", "guest" => "Mr. Techie", "date" => "10 Sep 2025", "image" => "../frontend/img/gallery7.jpg"],
+          ["title" => "Tech Fest", "guest" => "Mr. Techie", "date" => "10 Sep 2025", "image" => "../frontend/img/gallery7.jpg"],
+          ["title" => "Tech Fest", "guest" => "Mr. Techie", "date" => "10 Sep 2025", "image" => "../frontend/img/gallery7.jpg"],
+          ["title" => "Tech Fest", "guest" => "Mr. Techie", "date" => "10 Sep 2025", "image" => "../frontend/img/gallery7.jpg"]
+        ];
 
-    <!-- Footer -->
-    <?php include("includes/footer.php"); ?>
+        foreach($gallery as $item) {
+          echo '
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <!-- Front -->
+                <div class="flip-card-front">
+                  <img src="'.$item["image"].'" alt="'.$item["title"].'">
+                </div>
+                <!-- Back -->
+                <div class="flip-card-back">
+                  <h3>'.$item["title"].'</h3>
+                  <p><strong>Chief Guest:</strong> '.$item["guest"].'</p>
+                  <p><strong>Date:</strong> '.$item["date"].'</p>
+                </div>
+              </div>
+            </div>
+          ';
+        }
+        ?>
+      </div>
+    </section>
 
   </div>
-
-  <!-- JS -->
-  <script>
-    let studentsData = [];
-
-    // Fetch students from backend
-    async function fetchStudents() {
-      try {
-        const response = await fetch("http://localhost/Association-Details/admin/get_students.php"); 
-        studentsData = await response.json();
-        showYear("4th Year"); // Default tab
-      } catch (error) {
-        console.error("Error fetching students:", error);
-      }
-    }
-
-    function showYear(year) {
-      document.getElementById("year-title").textContent = year;
-
-      // Reset all tabs
-      ["2022","2023","2024"].forEach(y => {
-        const tab = document.getElementById(`tab-${y}`);
-        tab.className = "px-4 py-2 rounded-full bg-gray-700 text-gray-300 hover:bg-gray-600 transition duration-300";
-      });
-      document.getElementById(`tab-${year.split(" ")[0]}`).className =
-        "px-4 py-2 rounded-full bg-blue-900 text-white font-semibold transition duration-300";
-
-      const container = document.getElementById("member-container");
-      container.innerHTML = "";
-
-      // ✅ Filter students by year
-      const filtered = studentsData.filter(s => {
-        let yr = "";
-        switch (s.year) {
-          case "1": yr = "2022"; break;
-          case "2": yr = "2023"; break;
-          case "3": yr = "2024"; break;
-          
-          default: yr = s.year + " Year";
-        }
-        return yr === year;
-      });
-
-      if (filtered.length === 0) {
-        container.innerHTML = `<p class="text-gray-400 text-center col-span-3">No students found for ${year}.</p>`;
-      }
-
-      filtered.forEach(student => {
-        const card = document.createElement("div");
-        card.className = "bg-white rounded-xl shadow-md p-6 text-center cursor-pointer hover:shadow-2xl hover:-translate-y-2 transform transition duration-500 ease-in-out";
-
-        card.innerHTML = `
-          <img src="${student.photo || './img/default.png'}" class="w-24 h-24 rounded-full mx-auto mb-3">
-          <h2 class="text-lg font-semibold text-gray-900">${student.name}</h2>
-          <p class="text-sm text-gray-600">${student.department} - ${student.year} Year</p>
-        `;
-
-        // ✅ On click -> go to student profile page
-        card.onclick = () => {
-          window.location.href = "http://localhost/Association-Details/client/student.php?id=" + student.student_id;
-        };
-
-        container.appendChild(card);
-      });
-    }
-
-    // Run on page load
-    fetchStudents();
-  </script>
-
 </body>
 </html>
