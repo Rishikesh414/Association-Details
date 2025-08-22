@@ -100,15 +100,11 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         <?php
         $gallery = [
-          ["title" => "2023 Inauguration", "guest" => "Dr. A", "date" => "12 Jan 2023", "image" => "../frontend/img/IMG_8697.JPG"],
-          ["title" => "2024 Inauguration", "guest" => "Prof. B", "date" => "15 Jan 2024", "image" => "../frontend/img/img.jpg"],
-          ["title" => "Workshop on Django", "guest" => "Dr. XYZ", "date" => "25 Aug 2025", "image" => "../frontend/img/gallery5.jpg"],
-          ["title" => "Tech Fest", "guest" => "Mr. Techie", "date" => "10 Sep 2025", "image" => "../frontend/img/gallery7.jpg"],
-          ["title" => "Tech Fest", "guest" => "Mr. Techie", "date" => "10 Sep 2025", "image" => "../frontend/img/gallery7.jpg"],
-          ["title" => "Tech Fest", "guest" => "Mr. Techie", "date" => "10 Sep 2025", "image" => "../frontend/img/gallery7.jpg"],
-          ["title" => "Tech Fest", "guest" => "Mr. Techie", "date" => "10 Sep 2025", "image" => "../frontend/img/gallery7.jpg"],
-          ["title" => "Tech Fest", "guest" => "Mr. Techie", "date" => "10 Sep 2025", "image" => "../frontend/img/gallery7.jpg"],
-          ["title" => "Tech Fest", "guest" => "Mr. Techie", "date" => "10 Sep 2025", "image" => "../frontend/img/gallery7.jpg"]
+          ["title" => "Text Web Social Media Analytics", "guest" => "Dr. R. Lokesh Kumar (VIT Chennai)", "date" => "25 Oct 2024", "image" => "../frontend/img/text_social_media/51.jpeg"],
+          ["title" => "Laravel – Building Modern Web Applications", "guest" => "Mr. K. Anandraj, CEO, TM Innovations", "date" => "•	08 Feb 2025 to 14 Feb 2025 ", "image" => "../frontend/img/laravel.jpeg"],
+          ["title" => "Django and its Frameworks", "guest" => "Mr. K. Anandraj, CEO, TM Innovations", "date" => "•	15 Feb 2025 to 20 Feb 2025 ", "image" => "../frontend/img/workshop_django/24.jpeg"],
+          ["title" => "Mastering the job hunt – interview preparation for professional careers", "guest" => "Mr. Arasakumar S, Senior Software Engineer, Infosys Pvt. Ltd.", "date" => "•	09 Nov 2024 ", "image" => "../frontend/img/2024_inaug/16.jpeg"],
+          
         ];
 
         foreach($gallery as $item) {
