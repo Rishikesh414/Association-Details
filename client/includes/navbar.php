@@ -32,7 +32,7 @@
           Gallery
           <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-purple-500 transition-all group-hover:w-full"></span>
         </a>
-        <a href="contact.php" class="relative group">
+        <a href="officebearers.php" class="relative group">
           Office Bearers
           <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-purple-500 transition-all group-hover:w-full"></span>
         </a>
