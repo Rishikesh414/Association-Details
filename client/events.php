@@ -209,7 +209,8 @@
             "description" => "The team with the highest overall score will be declared “Best Code Crafters Team of the Year.",
             "date" => "Duration 4-Month ",
             "image" => "./assets/img/C.png",
-            "badge" => "Association Activities"
+            "badge" => "Association Activities",
+            "id" =>1
           ],
           [
             "title" => "The Full Stack Approach to SAP Integration and Customization",
@@ -257,7 +258,11 @@ academic outreach beyond institutional boundaries",
           if (isset($event["badge"])) {
             echo '<span class="inline-block bg-purple-700 text-xs px-2 py-1 rounded-full text-white">' . $event["badge"] . '</span>';
           }
+          if(isset($event['id'])==1) {
+            echo '<a href="./club.php" class="ml-5"><button class="inline-block bg-purple-700 text-xs px-2 py-1 rounded-full text-white">View</button></a>';
+          }
           echo '
+          
       </div>
     </div>';
         }
