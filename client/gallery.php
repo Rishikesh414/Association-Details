@@ -113,7 +113,7 @@
           "../frontend/img/workshop_on_angular_js/31.jpeg",
           "../frontend/img/workshop_on_angular_js/32.jpeg",
           "../frontend/img/workshop_on_angular_js/34.jpeg",
-          "../frontend/img/workshop_on_angular_js/35.jpeg",
+          "../frontend/img/workshop_on_angular_js/35.png",
         ]
       ],
       [
