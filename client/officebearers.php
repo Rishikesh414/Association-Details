@@ -197,7 +197,7 @@
       ],
       2025: [
         {
-          name: "Naveen Bharathi .",
+          name: "Naveen Bharathi.B",
           role: "President",
           batch: "2022-2026",
           img: "./assets/img/11 NAVEEN BHARATHI.jpg"

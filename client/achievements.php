@@ -150,7 +150,7 @@
       <div >
         <h2 class="text-xl font-semibold mt-6 mb-2">Academic / Technical Achievements</h2>
 <div class="overflow-x-auto mb-6">
-<table class="min-w-full border border-gray-300 ">
+<table class="min-w-full border border-gray-300 bg-gradient-to-r from-purple-900 to-purple-700 ">
 <thead class="">
 <tr>
 <th class="px-4 py-2 border">S.No</th>
@@ -315,7 +315,7 @@
 
 <h2 class="text-xl font-semibold mt-6 mb-2">2. Department Activities</h2>
 <div class="overflow-x-auto mb-6">
-<table class="min-w-full border border-gray-300 ">
+<table class="min-w-full border border-gray-300 bg-gradient-to-r from-purple-900 to-purple-700 ">
 <thead class="">
 <tr>
 <th class="px-4 py-2 border">S.No</th>
@@ -368,7 +368,7 @@
 <!-- 3. Hackathons, Expos, Conferences -->
 <h2 class="text-xl font-semibold mt-6 mb-2">3. Hackathons, Expos, Conferences</h2>
 <div class="overflow-x-auto mb-6">
-<table class="min-w-full border border-gray-300 ">
+<table class="min-w-full border border-gray-300 bg-gradient-to-r from-purple-900 to-purple-700 ">
 <thead class="">
 <tr>
 <th class="px-4 py-2 border">S.No</th>
@@ -414,7 +414,7 @@
 <!-- 4. Sports Achievements -->
 <h2 class="text-xl font-semibold mt-6 mb-2">4. Sports Achievements</h2>
 <div class="overflow-x-auto mb-6">
-<table class="min-w-full border border-gray-300 ">
+<table class="min-w-full border border-gray-300 bg-gradient-to-r from-purple-900 to-purple-700 ">
 <thead class="">
 <tr>
 <th class="px-4 py-2 border">S.No</th>
@@ -466,7 +466,7 @@
       </div>
       <h2 class="text-xl font-semibold mt-6 mb-2">6. Internships & Company Projects</h2>
 <div class="overflow-x-auto mb-6">
-<table class="min-w-full border border-gray-300">
+<table class="min-w-full border border-gray-300 bg-gradient-to-r from-purple-900 to-purple-700 ">
 <thead class="">
 <tr>
 <th class="px-4 py-2 border">S.No</th>
