@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NEXUS Events</title>
+  <title>Achievements | NEXUS </title>
   <!-- AOS for Scroll Animations -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -145,12 +145,12 @@
     
 
     <!-- Upcoming Events Section -->
-    <section class="max-w-6xl mx-auto px-6 py-12">
+    <section class="max-w-7xl mx-auto px-6 py-12">
       <h2 class="text-3xl font-bold text-center mb-10 text-purple-300">Achievements</h2>
       <div >
         <div class="overflow-x-auto">
     <table class="min-w-full border border-gray-800 bg-transparent ">
-      <thead class="bg-gray-100">
+      <thead class="bg-transparent uppercase">
         <tr>
           <th class="px-4 py-2 border">S.No</th>
           <th class="px-4 py-2 border">Date / Duration</th>
@@ -285,10 +285,13 @@
           <td class="px-4 py-2 border">16</td>
           <td class="px-4 py-2 border">28/02/2025</td>
           <td class="px-4 py-2 border">III Yr</td>
-          <td class="px-4 py-2 border">Naveen Bharathi B</td>
+          <td class="px-4 py-2 border">
+            A.Sri Hari Prasath , 
+            Naveen Bharathi B</td>
           <td class="px-4 py-2 border">Product Expo 2025</td>
           <td class="px-4 py-2 border">Jerusalem College of Engineering</td>
         </tr>
+        
         <tr class="hover:bg-black  hover:bg-opacity-10 transition-colors">
           <td class="px-4 py-2 border">17</td>
           <td class="px-4 py-2 border">03/03/2025 to 12/03/2025</td>
@@ -320,6 +323,57 @@
           <td class="px-4 py-2 border">Sarvaji M</td>
           <td class="px-4 py-2 border">Quantitative research job simulation</td>
           <td class="px-4 py-2 border">Forage</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+      </div>
+    </section>
+
+
+    <section class="max-w-7xl mx-auto px-6 py-12">
+      <h2 class="text-3xl font-bold text-center mb-10 text-purple-300">Sports Achievements</h2>
+      <div >
+        <div class="overflow-x-auto">
+    <table class="min-w-full border border-gray-300 ">
+      <thead class="">
+        <tr>
+          <th class="px-4 py-2 border">S.No</th>
+          <th class="px-4 py-2 border">Date</th>
+          <th class="px-4 py-2 border">Student Name</th>
+          <th class="px-4 py-2 border">Year / Dept</th>
+          <th class="px-4 py-2 border">Event / Tournament</th>
+          <th class="px-4 py-2 border">Position / Achievement</th>
+          <th class="px-4 py-2 border">Organization / Venue</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="hover:bg-black hover:bg-opacity-10 transition-colors">
+          <td class="px-4 py-2 border">1</td>
+          <td class="px-4 py-2 border">14/10/2024 & 16/10/2024</td>
+          <td class="px-4 py-2 border">M. Priyadharshini</td>
+          <td class="px-4 py-2 border">I IT</td>
+          <td class="px-4 py-2 border">Chess Women Tournament</td>
+          <td class="px-4 py-2 border">Participated</td>
+          <td class="px-4 py-2 border">University College of Engineering, Dindigul</td>
+        </tr>
+        <tr class="hover:bg-black hover:bg-opacity-10 transition-colors">
+          <td class="px-4 py-2 border">2</td>
+          <td class="px-4 py-2 border">17/09/2024 to 19/09/2024</td>
+          <td class="px-4 py-2 border">S. Nandhini</td>
+          <td class="px-4 py-2 border">III IT</td>
+          <td class="px-4 py-2 border">Basketball Women Tournament</td>
+          <td class="px-4 py-2 border">II Position, Cash Award Rs. 10000/-</td>
+          <td class="px-4 py-2 border">SDAT Stadium, Theni</td>
+        </tr>
+        <tr class="hover:bg-black hover:bg-opacity-10 transition-colors">
+          <td class="px-4 py-2 border">3</td>
+          <td class="px-4 py-2 border">17/09/2024 to 19/09/2024</td>
+          <td class="px-4 py-2 border">M. Priyadharshini</td>
+          <td class="px-4 py-2 border">I IT</td>
+          <td class="px-4 py-2 border">CM Trophy Events (Chess / Handball / Swimming / Athletics)</td>
+          <td class="px-4 py-2 border">Participated / II-III positions (depending on event)</td>
+          <td class="px-4 py-2 border">SDAT Stadium, Theni</td>
         </tr>
       </tbody>
     </table>
