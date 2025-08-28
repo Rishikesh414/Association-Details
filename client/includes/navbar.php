@@ -16,10 +16,7 @@
           Home
           <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-purple-500 transition-all group-hover:w-full"></span>
         </a>
-        <a href="about.php" class="relative group">
-          About
-          <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-purple-500 transition-all group-hover:w-full"></span>
-        </a>
+       
         <a href="events.php" class="relative group">
           Events
           <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-purple-500 transition-all group-hover:w-full"></span>
@@ -36,7 +33,10 @@
           Office Bearers
           <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-purple-500 transition-all group-hover:w-full"></span>
         </a>
-
+        <a href="register.php" class="relative group">
+         Register
+          <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-purple-500 transition-all group-hover:w-full"></span>
+        </a>
       </div>
 
       <!-- Mobile Menu Button -->
@@ -65,7 +65,8 @@
     <a href="events.php" class="block hover:text-purple-400">Events</a>
     <a href="achievements.php" class="block hover:text-purple-400">Achievements</a>
     <a href="gallery.php" class="block hover:text-purple-400">Gallery</a>
-    <a href="officebearers.php" class="block hover:text-purple-400">Office Bearers</a> 
+    <a href="officebearers.php" class="block hover:text-purple-400">Office Bearers</a>
+     <a href="register.php" class="block hover:text-purple-400">Register</a> 
   </div>
 </nav>
 
