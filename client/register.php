@@ -3,8 +3,7 @@
 // $host = "localhost";
 // $user = "root";
 // $pass = "";
-// $dbname = "event_db";
-
+// $dbname = "event_db"; 
 
 $host = "localhost";
 $user = "nscet_association";

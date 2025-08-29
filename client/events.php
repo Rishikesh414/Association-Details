@@ -158,7 +158,9 @@ fulfilling the objective of knowledge dissemination and
 academic outreach beyond institutional boundaries",
             "date" => "6th Septemter (Saturday)",
             "image" => "./assets/img/aws.png",
-            "badge" => "Workshop"
+            "badge" => "Workshop",
+            'link'=>'workshop.php',
+             "id" =>1
            ],
           [
             "title" => "Code Crafters Club – 4-Month Association Activities (Team-Based)",
@@ -166,7 +168,7 @@ academic outreach beyond institutional boundaries",
             "date" => "Duration 4-Month ",
             "image" => "./assets/img/C.png",
             "badge" => "Association Activities",
-            "id" =>1
+           
           ],
           [
             "title" => "The Full Stack Approach to SAP Integration and Customization",
@@ -206,7 +208,7 @@ development, mobile apps, data science, AI/ML, and DevOps..",
             echo '<span class="inline-block bg-purple-700 text-xs px-2 py-1 rounded-full text-white">' . $event["badge"] . '</span>';
           }
           if(isset($event['id'])==1) {
-            echo '<a href="./club.php" class="ml-5"><button class="inline-block bg-purple-700 text-xs px-2 py-1 rounded-full text-white">View</button></a>';
+            echo '<a href="./workshop.php" class="ml-5"><button class="inline-block bg-purple-700 text-xs px-2 py-1 rounded-full text-white">View</button></a>';
           }
           echo '
           

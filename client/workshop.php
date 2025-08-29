@@ -62,6 +62,14 @@
       Deploying the Applications on AWS Cloud
     </p>
   </div>
+
+     <div class="mt-10 bg-purple-600  px-10 py-3 rounded text-xl border-2 border-white ">
+       <a href="./register.php">
+        <button class="uppercase">
+        Registration Now
+      </button>
+    </a>
+     </div>
 </section>
     <!-- About Event Section -->
 <section class="py-16 px-8 md:px-20 bg-gray-900">
@@ -111,6 +119,7 @@
         <li>AWS EC2 Deployment – Launching, configuring, and deploying on EC2.</li>
         <li>Frontend & AI Integration – UI development with AI-driven enhancements.</li>
       </ul>
+
     </div>
 
   </div>
@@ -145,7 +154,7 @@
       
       <!-- LinkedIn Icon Button -->
       <a href="https://www.linkedin.com/in/mukilan2003/" target="_blank" 
-         class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-blue-600 hover:bg-blue-500 mt-8">
+         class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-purple-600 hover:bg-blue-500 mt-8">
         <i class="fab fa-linkedin text-white text-3xl"></i>
       </a>
     </div>
