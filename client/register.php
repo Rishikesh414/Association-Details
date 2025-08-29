@@ -16,6 +16,10 @@ if ($conn->connect_error) {
     die("Database Connection Failed: " . $conn->connect_error);
 }
 
+
+
+
+
 // --- Create table if not exists ---
 $table_sql = "CREATE TABLE IF NOT EXISTS registrations (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -203,6 +207,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
     </form>
   </section>
+  <div class="flex justify-end mb-4">
+  <a href="logout.php" class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg font-semibold">Logout</a>
+</div>
+
 
   <footer class="bg-gray-900 text-center py-6 border-t border-gray-700 relative z-10">
     <p class="uppercase text-sm">&copy; 2025 Nexus Association</p>
