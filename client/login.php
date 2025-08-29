@@ -2,7 +2,7 @@
 <?php
 session_start();
 
-// --- Hardcoded Admin Credentials (you can later move to DB) ---
+
 $ADMIN_USER = "admin";
 $ADMIN_PASS = "12345";
 
