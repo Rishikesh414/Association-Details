@@ -186,7 +186,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </tr>
           </tbody>
         </table>
-        <p class="text-sm text-gray-300 mt-2 italic text-center">* Maximum 5 participants allowed</p>
+        <p class="text-sm text-gray-300 mt-2 italic text-center">* Maximum 50 participants allowed.</p>
 
         <div class="mt-6 text-center">
           <h3 class="text-lg font-semibold mb-3">Scan QR Code to Pay</h3>

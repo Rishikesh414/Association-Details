@@ -104,6 +104,8 @@
       <div class="mt-8 text-left text-gray-200 text-lg md:text-xl font-medium">
         📅 6th September 2025 &nbsp; | &nbsp; ⏰ 9:30 AM – 4:00 PM <br>
         📍 Linux lab , NSCET 
+                <p class="text-sm text-gray-300 mt-2 italic text-center">* Maximum 50 participants allowed. *</p>
+
       </div>
     </div>
 
