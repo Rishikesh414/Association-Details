@@ -1,9 +1,15 @@
 <?php
 // --- Database connection ---
+// $host = "localhost";
+// $user = "root";
+// $pass = "";
+// $dbname = "event_db";
+
+
 $host = "localhost";
-$user = "root";
-$pass = "";
-$dbname = "event_db";
+$user = "nscet_association";
+$pass = "nscet@9210";
+$dbname = "nscet_association"; 
 
 $conn = new mysqli($host, $user, $pass, $dbname);
 if ($conn->connect_error) {
