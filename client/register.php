@@ -183,7 +183,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <h3 class="text-lg font-semibold mb-3">Scan QR Code to Pay</h3>
           <img src="uploads/qr.png" alt="Payment QR Code"
             class="mx-auto w-56 rounded-lg shadow-md border border-gray-600" />
-          <p class="mt-3 font-medium">NADAR SARASWATHI COLLEGE OF ENGINEERING & TECHNOLOGY</p>
+         
           <p class="text-sm text-gray-400">Use any UPI app (GPay, PhonePe, Paytm, etc.)</p>
         </div>
       </section>
