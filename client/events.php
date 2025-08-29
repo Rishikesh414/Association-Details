@@ -142,7 +142,82 @@
       </p>
     </section>
 
-    <!-- Past Events Section -->
+   
+
+    <!-- Upcoming Events Section -->
+    <section class="max-w-6xl mx-auto px-6 py-12">
+      <h2 class="text-3xl font-bold text-center mb-10 text-purple-300">Upcoming Events</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <?php
+        $upcoming_events = [
+           [
+            "title" => "State-level Hands-on Workshop on “Deploying the Applications
+on AWS cloud”",
+            "description" => "This workshop not only boosted participants' technical knowhow but also helped establish professional connections,
+fulfilling the objective of knowledge dissemination and
+academic outreach beyond institutional boundaries",
+            "date" => "6th Septemter (Saturday)",
+            "image" => "./assets/img/aws.png",
+            "badge" => "Workshop"
+           ],
+          [
+            "title" => "Code Crafters Club – 4-Month Association Activities (Team-Based)",
+            "description" => "The team with the highest overall score will be declared “Best Code Crafters Team of the Year.",
+            "date" => "Duration 4-Month ",
+            "image" => "./assets/img/C.png",
+            "badge" => "Association Activities",
+            "id" =>1
+          ],
+          [
+            "title" => "The Full Stack Approach to SAP Integration and Customization",
+            "description" => "To provide students with real-world insights into cyber forensics
+and incident response mechanisms, including investigation
+methodologies, forensic tools, threat detection, evidence
+preservation, and legal aspects related to cybersecurity breaches.",
+            "date" => "23.08.2025 & Saturday -12:00pm -1:30pm",
+            "image" => "./assets/img/FSapp.png",
+            "badge" => "Tech Talk"
+          ],
+          [
+            "title" => "Build your TechStack: The Digital Toolbox for Future Engineers",
+            "description" => " To guide students in choosing the right combination of
+technologies and tools for different domains like web
+development, mobile apps, data science, AI/ML, and DevOps..",
+            "date" => "13.09.2025 & Saturday",
+            "image" => "./assets/img/Fe.gif",
+            "badge" => "Tech Talk"
+          ],
+         
+        ];
+
+        foreach ($upcoming_events as $index => $event) {
+          $delay = $index * 180; // slightly slower stagger
+          echo '
+    <div class="tilt-card" data-aos="fade-up" data-aos-delay="' . $delay . '">
+      <img src="' . $event["image"] . '" alt="' . $event["title"] . '" class="w-full h-48 object-cover" />
+      <div class="p-4 transition-all duration-500 group-hover:bg-opacity-90">
+        <h3 class="text-xl font-bold text-purple-400 mb-1">' . $event["title"] . '</h3>
+        <p class="text-sm text-gray-300 mb-2">' . $event["description"] . '</p>
+        <p class="text-xs text-purple-200 mb-1">📅 ' . $event["date"] . '</p>';
+          if (isset($event["fee"])) {
+            echo '<p class="text-xs text-blue-300 mb-1">💸 Fee: ' . $event["fee"] . '</p>';
+          }
+          if (isset($event["badge"])) {
+            echo '<span class="inline-block bg-purple-700 text-xs px-2 py-1 rounded-full text-white">' . $event["badge"] . '</span>';
+          }
+          if(isset($event['id'])==1) {
+            echo '<a href="./club.php" class="ml-5"><button class="inline-block bg-purple-700 text-xs px-2 py-1 rounded-full text-white">View</button></a>';
+          }
+          echo '
+          
+      </div>
+    </div>';
+        }
+        ?>
+      </div>
+    </section>
+
+     <!-- Past Events Section -->
     <section class="max-w-6xl mx-auto px-6 py-12">
       <h2 class="text-3xl font-bold text-center mb-10 text-purple-300">Past Events</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -193,78 +268,6 @@
           echo '
         </div>
       </div>';
-        }
-        ?>
-      </div>
-    </section>
-
-    <!-- Upcoming Events Section -->
-    <section class="max-w-6xl mx-auto px-6 py-12">
-      <h2 class="text-3xl font-bold text-center mb-10 text-purple-300">Upcoming Events</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        <?php
-        $upcoming_events = [
-          [
-            "title" => "Code Crafters Club – 4-Month Association Activities (Team-Based)",
-            "description" => "The team with the highest overall score will be declared “Best Code Crafters Team of the Year.",
-            "date" => "Duration 4-Month ",
-            "image" => "./assets/img/C.png",
-            "badge" => "Association Activities",
-            "id" =>1
-          ],
-          [
-            "title" => "The Full Stack Approach to SAP Integration and Customization",
-            "description" => "To provide students with real-world insights into cyber forensics
-and incident response mechanisms, including investigation
-methodologies, forensic tools, threat detection, evidence
-preservation, and legal aspects related to cybersecurity breaches.",
-            "date" => "23.08.2025 & Saturday -12:00pm -1:30pm",
-            "image" => "./assets/img/FSapp.png",
-            "badge" => "Tech Talk"
-          ],
-          [
-            "title" => "Build your TechStack: The Digital Toolbox for Future Engineers",
-            "description" => " To guide students in choosing the right combination of
-technologies and tools for different domains like web
-development, mobile apps, data science, AI/ML, and DevOps..",
-            "date" => "13.09.2025 & Saturday",
-            "image" => "./assets/img/Fe.gif",
-            "badge" => "Tech Talk"
-          ],
-          [
-            "title" => "State-level Hands-on Workshop on “Deploying the Applications
-on AWS cloud”",
-            "description" => "This workshop not only boosted participants' technical knowhow but also helped establish professional connections,
-fulfilling the objective of knowledge dissemination and
-academic outreach beyond institutional boundaries",
-            "date" => "6th Septemter (Saturday)",
-            "image" => "./assets/img/aws.png",
-            "badge" => "Workshop"
-          ]
-        ];
-
-        foreach ($upcoming_events as $index => $event) {
-          $delay = $index * 180; // slightly slower stagger
-          echo '
-    <div class="tilt-card" data-aos="fade-up" data-aos-delay="' . $delay . '">
-      <img src="' . $event["image"] . '" alt="' . $event["title"] . '" class="w-full h-48 object-cover" />
-      <div class="p-4 transition-all duration-500 group-hover:bg-opacity-90">
-        <h3 class="text-xl font-bold text-purple-400 mb-1">' . $event["title"] . '</h3>
-        <p class="text-sm text-gray-300 mb-2">' . $event["description"] . '</p>
-        <p class="text-xs text-purple-200 mb-1">📅 ' . $event["date"] . '</p>';
-          if (isset($event["fee"])) {
-            echo '<p class="text-xs text-blue-300 mb-1">💸 Fee: ' . $event["fee"] . '</p>';
-          }
-          if (isset($event["badge"])) {
-            echo '<span class="inline-block bg-purple-700 text-xs px-2 py-1 rounded-full text-white">' . $event["badge"] . '</span>';
-          }
-          if(isset($event['id'])==1) {
-            echo '<a href="./club.php" class="ml-5"><button class="inline-block bg-purple-700 text-xs px-2 py-1 rounded-full text-white">View</button></a>';
-          }
-          echo '
-          
-      </div>
-    </div>';
         }
         ?>
       </div>

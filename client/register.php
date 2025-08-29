@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nexus Events – Registration</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body{
+            overflow-x:hidden ;
+        }
+    </style>
 </head>
 
 <body class="bg-gray-900 text-white relative">
@@ -19,54 +24,41 @@
     </div>
 
 
-    <!-- College Banner Section -->
-    <section class="relative">
-        <!-- Background Image -->
-        <img src="./assets/img/Colleg photos.jpg"
-            alt="NSCET Banner"
-            class="w-full h-96 md:h-[32rem] object-cover">
-
-        <!-- Overlay Text -->
-        <div class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-center px-4">
-            <h2 class="text-2xl md:text-4xl font-bold text-white leading-snug">
-                NADAR SARASWATHI COLLEGE OF ENGINEERING & TECHNOLOGY
-            </h2>
-            <p class="mt-4 text-base md:text-lg text-gray-200">
-                Approved by AICTE, New Delhi & Affiliated to Anna University, Chennai
-            </p>
-            <p class="text-base md:text-lg text-gray-200">
-                Accredited by NAAC with 'A' Grade | An ISO 9001:2015 Certified Institution
-            </p>
-            <p class="text-base md:text-lg text-gray-200">
-                Vadapudupatti, Annanji (PO), Theni - 625531
-            </p>
-        </div>
-    </section>
-
-
-
-    <!-- About -->
-    <section id="about" class="relative z-10 py-16 px-6 md:px-20 bg-gray-800/80 rounded-xl my-6">
-        <h2 class="text-3xl font-bold text-center mb-4">About the Events</h2>
-        <p class="text-center text-gray-300">
-            The <span class="text-purple-400 font-semibold">Nexus Association</span> organizes technical workshops,
-            coding contests, and innovative competitions to boost skills in AI and IT. Join us and showcase your talent!
-        </p>
-    </section>
-
     <!-- Register -->
-    <section id="register" class="relative z-10 py-16 px-6 md:px-20">
+    <section id="register" class="relative z-10 py-16 px-6 md:px-20 mt-20">
         <h2 class="text-3xl font-bold text-center mb-6">Register Now</h2>
         <form action="register.php" method="POST" enctype="multipart/form-data"
             class="max-w-2xl mx-auto bg-gray-900/90 p-8 rounded-lg shadow-lg space-y-4">
 
             <div>
+                <label class="block mb-2">Name</label>
+                <input type="tel" name="phone" class="w-full p-2 rounded bg-gray-700 text-white" required>
+            </div>
+            <div>
                 <label class="block mb-2">Department</label>
                 <select name="department" required class="w-full p-2 rounded bg-gray-700 text-white">
-                    <option disabled selected>Select Department</option>
-                    <option>Information Technology</option>
-                    <option>Computer Science</option>
-                    <option>AI & DS</option>
+                      <option value="" selected disabled>Select Department</option>
+  <option value="Computer Science and Engineering">Computer Science and Engineering</option>
+  <option value="Information Technology">Information Technology</option>
+  <option value="Electronics and Communication Engineering">Electronics and Communication Engineering</option>
+  <option value="Electrical and Electronics Engineering">Electrical and Electronics Engineering</option>
+  <option value="Mechanical Engineering">Mechanical Engineering</option>
+  <option value="Civil Engineering">Civil Engineering</option>
+  <option value="Mechatronics Engineering">Mechatronics Engineering</option>
+  <option value="Automobile Engineering">Automobile Engineering</option>
+  <option value="Biomedical Engineering">Biomedical Engineering</option>
+  <option value="Chemical Engineering">Chemical Engineering</option>
+  <option value="Aeronautical Engineering">Aeronautical Engineering</option>
+  <option value="Aerospace Engineering">Aerospace Engineering</option>
+  <option value="Agricultural Engineering">Agricultural Engineering</option>
+  <option value="Marine Engineering">Marine Engineering</option>
+  <option value="Robotics and Automation">Robotics and Automation</option>
+  <option value="Artificial Intelligence and Data Science">Artificial Intelligence and Data Science</option>
+  <option value="Electronics and Instrumentation Engineering">Electronics and Instrumentation Engineering</option>
+  <option value="Environmental Engineering">Environmental Engineering</option>
+  <option value="Industrial Engineering">Industrial Engineering</option>
+  <option value="Structural Engineering">Structural Engineering</option>
+  <option value="Other">Other</option>
                 </select>
             </div>
 
@@ -155,7 +147,7 @@
 
     <!-- Footer -->
     <footer class="relative z-10 bg-gray-900 text-center py-6 border-t border-gray-700">
-        <p>&copy; 2025 Nexus Association – Dept. of IT, NSCET</p>
+        <p class="uppercase">&copy; 2025 Nexus Association </p>
     </footer>
 </body>
 
