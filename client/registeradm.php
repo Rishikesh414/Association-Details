@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 if (isset($_GET['toggle'])) {
     $id = intval($_GET['toggle']);
     $conn->query("UPDATE registrations SET checked = 1 - checked WHERE id=$id");
-    header("Location: admin.php");
+    header("Location: registeradm.php");
     exit;
 }
 
@@ -41,12 +41,11 @@ $result = $conn->query("SELECT * FROM registrations ORDER BY created_at DESC");
           <th class="px-4 py-2 border">Transaction</th>
           <th class="px-4 py-2 border">Receipt</th>
           <th class="px-4 py-2 border">Checked</th>
-          <th class="px-4 py-2 border">Action</th>
         </tr>
       </thead>
       <tbody>
         <?php while($row = $result->fetch_assoc()): ?>
-          <tr class="text-gray-300">
+          <tr class="text-gray-300 hover:bg-gray-800">
             <td class="px-4 py-2 border"><?php echo $row['id']; ?></td>
             <td class="px-4 py-2 border"><?php echo $row['name']; ?></td>
             <td class="px-4 py-2 border"><?php echo $row['department']; ?></td>
@@ -57,11 +56,12 @@ $result = $conn->query("SELECT * FROM registrations ORDER BY created_at DESC");
             <td class="px-4 py-2 border">
               <a href="uploads/<?php echo $row['receipt']; ?>" target="_blank" class="text-purple-400 underline">View</a>
             </td>
-            <td class="px-4 py-2 border">
-              <?php echo $row['checked'] ? "✅ Checked" : "❌ Unchecked"; ?>
-            </td>
             <td class="px-4 py-2 border text-center">
-              <a href="admin.php?toggle=<?php echo $row['id']; ?>" class="px-3 py-1 bg-purple-600 rounded hover:bg-purple-700">Toggle</a>
+              <a href="registeradm.php?toggle=<?php echo $row['id']; ?>" 
+                 class="px-3 py-1 rounded font-semibold 
+                        <?php echo $row['checked'] ? 'bg-green-600 hover:bg-green-700' : 'bg-red-600 hover:bg-red-700'; ?>">
+                <?php echo $row['checked'] ? "✅ Checked" : "❌ Unchecked"; ?>
+              </a>
             </td>
           </tr>
         <?php endwhile; ?>
