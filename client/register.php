@@ -204,8 +204,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
     </form>
   </section>
-  <div class="flex justify-end mb-4">
-  <a href="logout.php" class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg font-semibold">Logout</a>
+  
 </div>
 
 
