@@ -175,6 +175,10 @@
   </div>
 </section>
 
+<section class="max-w-7xl mx-auto">
+  <iframe src="./assets/qr/Workshop.pdf" frameborder="0" width="100%" height="800"></iframe>
+</section>
+
     <footer class="relative z-10 bg-gray-900 text-center py-6 border-t border-gray-700">
         <p class="uppercase">&copy; 2025 Nexus Association </p>
     </footer>
