@@ -1,9 +1,9 @@
 <?php
-// --- Database connection ---
+
 // $host = "localhost";
 // $user = "root";
 // $pass = "";
-// $dbname = "event_db"; 
+// $dbname = "association_db"; 
 
 $host = "localhost";
 $user = "nscet_association";
@@ -14,8 +14,6 @@ $conn = new mysqli($host, $user, $pass, $dbname);
 if ($conn->connect_error) {
     die("Database Connection Failed: " . $conn->connect_error);
 }
-
-
 
 
 
@@ -190,7 +188,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div class="mt-6 text-center">
           <h3 class="text-lg font-semibold mb-3">Scan QR Code to Pay</h3>
-          <img src="uploads/qr.png" alt="Payment QR Code"
+          <img src="./assets/qr/imb.png" alt="Payment QR Code"
             class="mx-auto w-56 rounded-lg shadow-md border border-gray-600" />
          
           <p class="text-sm text-gray-400">Use any UPI app (GPay, PhonePe, Paytm, etc.)</p>
