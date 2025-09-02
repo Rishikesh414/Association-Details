@@ -42,35 +42,37 @@
 
 <!-- Hero Section -->
 <section class="hero flex flex-col items-center justify-center text-center px-4">
-  <div class="z-10 space-y-4">
-    <h1 class="text-purple-400 text-5xl md:text-6xl font-extrabold">
+  <div class="z-10 space-y-4 w-full">
+    <h1 class="text-white text-3xl sm:text-3xl md:text-6xl font-extrabold text-center md:text-center leading-snug">
       Nadar Saraswathi College of Engineering & Technology
     </h1>
 
-    <h2 class="text-purple-300 text-3xl md:text-5xl font-bold">
+    <h2 class="text-white text-2xl sm:text-2xl md:text-5xl font-bold text-center md:text-center leading-snug">
       Department of Information Technology
     </h2>
 
-    <h2 class="text-purple-300 text-2xl md:text-4xl font-bold">
+    <h2 class="text-white text-xl sm:text-xl md:text-4xl font-bold text-center md:text-center leading-snug">
       Network of eXperts in Unified System
     </h2>
   </div>
 
   <!-- Deploying Sentence Center -->
-  <div class="flex items-center justify-center mt-10">
-    <p class="text-purple-400 text-3xl md:text-4xl font-extrabold max-w-4xl leading-tight text-center">
+  <div class="flex items-center justify-center mt-10 w-full">
+    <p class="text-white text-xl sm:text-2xl md:text-4xl font-extrabold max-w-4xl leading-tight text-center md:text-center">
       Deploying the Applications on AWS Cloud
     </p>
   </div>
 
-     <div class="mt-10 bg-purple-600  px-10 py-3 rounded text-xl border-2 border-white ">
-       <a href="./register.php">
-        <button class="uppercase">
-        Registration Now
+  <!-- Button -->
+  <div class="mt-10 bg-purple-600 px-6 sm:px-10 py-3 rounded text-lg sm:text-xl border-2 border-white">
+    <a href="./register.php">
+      <button class="uppercase w-full md:w-auto">
+        Register Now
       </button>
     </a>
-     </div>
+  </div>
 </section>
+
     <!-- About Event Section -->
 <section class="py-16 px-8 md:px-20 bg-gray-900">
   <div class="flex flex-col md:flex-row gap-12">
