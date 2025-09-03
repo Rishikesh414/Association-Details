@@ -22,7 +22,7 @@ $table_sql = "CREATE TABLE IF NOT EXISTS registrations (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     department VARCHAR(100) NOT NULL,
-    year VARCHAR(50) NOT NULL,
+    email VARCHAR(50) NOT NULL,
     phone VARCHAR(15) NOT NULL,
     college VARCHAR(150) NOT NULL,
     transaction_id VARCHAR(100) NOT NULL,
@@ -36,7 +36,7 @@ $conn->query($table_sql);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $conn->real_escape_string($_POST['name']);
     $department = $conn->real_escape_string($_POST['department']);
-    $year = $conn->real_escape_string($_POST['year']);
+    $email = $conn->real_escape_string($_POST['email']);
     $phone = $conn->real_escape_string($_POST['phone']);
     $college = $conn->real_escape_string($_POST['college']);
     $transaction = $conn->real_escape_string($_POST['transaction']);
@@ -49,9 +49,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (move_uploaded_file($_FILES["receipt"]["tmp_name"], $target_file)) {
         $sql = "INSERT INTO registrations 
-                (name, department, year, phone, college, transaction_id, receipt) 
+                (name, department, email, phone, college, transaction_id, receipt) 
                 VALUES 
-                ('$name', '$department', '$year', '$phone', '$college', '$transaction', '$receipt_name')";
+                ('$name', '$department', '$email', '$phone', '$college', '$transaction', '$receipt_name')";
         if ($conn->query($sql) === TRUE) {
             echo "<script>alert('Registration Successful!'); window.location.href='register.php';</script>";
         } else echo "Error: " . $conn->error;
@@ -126,17 +126,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </select>
       </div>
 
-      <!-- Year -->
+      <!-- email -->
       <div>
-        <label class="block mb-2 font-semibold">Year</label>
-        <select name="year" required
+        <label class="block mb-2 font-semibold">email</label>
+        <input type='email' name="email" required
           class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-purple-500 outline-none">
-          <option disabled selected>Select Year</option>
-          <option>I Year</option>
-          <option>II Year</option>
-          <option>III Year</option>
-          <option>IV Year</option>
-        </select>
       </div>
 
       <!-- Phone -->
