@@ -179,6 +179,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           </tbody>
         </table>
         <p class="text-sm text-gray-300 mt-2 italic text-center">* Maximum 50 participants allowed.</p>
+        <p class="text-sm text-gray-300 mt-2 italic text-center"> Last Date Of Registration : 08-09-2025
+  </p>
 
         <div class="mt-6 text-center">
           <h3 class="text-lg font-semibold mb-3">Scan QR Code to Pay</h3>

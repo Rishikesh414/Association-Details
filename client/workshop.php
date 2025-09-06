@@ -71,6 +71,12 @@
       </button>
     </a>
   </div>
+
+   <div class="mt-10 ">
+  <p class="text-xl uppercase">
+    Last Date Of Registration : 08-09-2025
+  </p>
+  </div>
 </section>
 
     <!-- About Event Section -->
