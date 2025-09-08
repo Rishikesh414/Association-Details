@@ -51,8 +51,5 @@
 </div>
 
 
-  <footer class="bg-gray-900 text-center py-6 border-t border-gray-700 relative z-10">
-    <p class="uppercase text-sm">&copy; 2025 Nexus Association</p>
-  </footer>
 </body>
 </html>
