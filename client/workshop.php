@@ -65,11 +65,7 @@
 
   <!-- Button -->
   <div class="mt-10 bg-purple-600 px-6 sm:px-10 py-3 rounded text-lg sm:text-xl border-2 border-white">
-    <a href="./register.php">
-      <button class="uppercase w-full md:w-auto">
-        Register Now
-      </button>
-    </a>
+    
   </div>
 
    <div class="mt-10 ">
